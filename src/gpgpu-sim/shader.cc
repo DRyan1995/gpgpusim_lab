@@ -828,6 +828,10 @@ void scheduler_unit::cycle()
             bool valid = warp(warp_id).ibuffer_next_valid();
             bool warp_inst_issued = false;
             unsigned pc,rpc;
+            //ryan is hacking here
+            unsigned index, gap;
+            //end hacking
+
             m_simt_stack[warp_id]->get_pdom_stack_top_info(&pc,&rpc);
             SCHED_DPRINTF( "Warp (warp_id %u, dynamic_warp_id %u) has valid instruction (%s)\n",
                            (*iter)->get_warp_id(), (*iter)->get_dynamic_warp_id(),
@@ -856,11 +860,20 @@ void scheduler_unit::cycle()
                                 warp_inst_issued = true;
                                 //ryan is hacking here
                                 //if (m_stats->last_issued_mem_op != 0)
-                                m_stats->total_mem_op_gaps += (gpu_sim_cycle - m_stats->last_issued_mem_op);
+                                gap = (gpu_sim_cycle - m_stats->last_issued_mem_op);
+                                m_stats->total_mem_op_gaps += gap;
                                 printf("********************\n");
-                                printf("current gap: %u\n", gpu_sim_cycle - m_stats->last_issued_mem_op);
+                                printf("current gap: %u\n", gap);
                                 m_stats->total_issued_mem_ops ++;
                                 m_stats->last_issued_mem_op = gpu_sim_cycle;
+                                index = gap / 50;
+                                if(index > 9) index = 9;
+                                m_stats->histogram[index]++;
+                                printf("start print histogram\n");
+                                for (int i = 0; i < 10; ++i){
+                                    printf("%d-%d : %u\n", i*50, i*50 + 50, m_stats->histogram[i]);
+                                }
+                                printf("end print histogram\n");
                                 printf("gpu_sim_cycle = %u\n", gpu_sim_cycle);
                                 printf("Ryan: total_issued_mem_ops: %u\n ", m_stats->total_issued_mem_ops);
                                 printf("total_mem_op_gaps: %u\n", m_stats->total_mem_op_gaps);

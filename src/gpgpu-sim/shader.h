@@ -1410,6 +1410,7 @@ struct shader_core_stats_pod {
     unsigned total_mem_op_gaps;
     unsigned total_issued_mem_ops;
     unsigned last_issued_mem_op;
+    unsigned *histogram;
 
     //end hacking
 };
@@ -1461,7 +1462,7 @@ public:
         shader_cycle_distro = (unsigned*) calloc(config->warp_size+3, sizeof(unsigned));
         last_shader_cycle_distro = (unsigned*) calloc(m_config->warp_size+3, sizeof(unsigned));
         //ryan is hacking here
-        // total_issued_mem_ops = (unsigned*) calloc(config->num_shader(), sizeof(unsigned));
+        histogram = (unsigned*) calloc(10, sizeof(unsigned));
         // total_mem_op_gaps = (unsigned*) calloc(config->num_shader(), sizeof(unsigned));
         //end hacking
         n_simt_to_mem = (long *)calloc(config->num_shader(), sizeof(long));

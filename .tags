@@ -1624,10 +1624,10 @@ STAT_WRAPER_H	src/statwrapper.h	2;"	d
 STORE_OP	src/abstract_hardware_model.h	/^   STORE_OP,$/;"	e	enum:uarch_op_t
 STREAM_MANAGER_H_INCLUDED	src/stream_manager.h	29;"	d
 STRSIZE	src/gpgpu-sim/shader.cc	117;"	d	file:
-STRSIZE	src/gpgpu-sim/shader.cc	1591;"	d	file:
+STRSIZE	src/gpgpu-sim/shader.cc	1604;"	d	file:
 STR_SIZE	src/cuda-sim/cuda-sim.cc	458;"	d	file:
 STR_SIZE	src/cuda-sim/ptx_ir.cc	42;"	d	file:
-STR_SIZE	src/gpgpu-sim/shader.cc	1985;"	d	file:
+STR_SIZE	src/gpgpu-sim/shader.cc	1998;"	d	file:
 SUB_SWITCH_SZ	src/gpuwattch/cacti/highradix.h	/^    double SUB_SWITCH_SZ;$/;"	m	class:HighRadix
 SWAP	src/gpgpu-sim/dram.cc	203;"	d	file:
 SYNC	src/abstract_hardware_model.h	/^   SYNC=1,$/;"	e	enum:uarch_bar_t
@@ -5496,6 +5496,7 @@ height_sense_amplifier	src/gpuwattch/cacti/component.cc	/^double Component::heig
 helpMsg	aerialvision/guiclasses.py	/^  def helpMsg(self, string):$/;"	m	class:formEntry
 high	src/cuda-sim/ptx_sim.h	/^       unsigned int high;$/;"	m	struct:ptx_reg_t::__anon5
 highest	src/cuda-sim/ptx_sim.h	/^       unsigned int highest;$/;"	m	struct:ptx_reg_t::__anon5
+histogram	src/gpgpu-sim/shader.h	/^    unsigned *histogram;$/;"	m	struct:shader_core_stats_pod
 hit	src/gpuwattch/basic_components.h	/^    double hit;$/;"	m	class:statsComponents
 hit_watchpoint	src/debug.cc	/^void hit_watchpoint( unsigned watchpoint_num, ptx_thread_info *thd, const ptx_instruction *pI )$/;"	f
 homenode_read_accesses	src/gpuwattch/XML_Parse.h	/^	double homenode_read_accesses;$/;"	m	struct:__anon20
