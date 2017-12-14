@@ -859,10 +859,8 @@ void scheduler_unit::cycle()
                                 m_stats->total_mem_op_gaps += (gpu_sim_cycle - m_stats->last_issued_mem_op);
                                 printf("********************\n");
                                 printf("current gap: %u\n", gpu_sim_cycle - m_stats->last_issued_mem_op);
-                                if (gpu_sim_cycle - m_stats->last_issued_mem_op > 0){
-                                    m_stats->total_issued_mem_ops ++;
-                                    m_stats->last_issued_mem_op = gpu_sim_cycle;
-                                }
+                                m_stats->total_issued_mem_ops ++;
+                                m_stats->last_issued_mem_op = gpu_sim_cycle;
                                 printf("gpu_sim_cycle = %u\n", gpu_sim_cycle);
                                 printf("Ryan: total_issued_mem_ops: %u\n ", m_stats->total_issued_mem_ops);
                                 printf("total_mem_op_gaps: %u\n", m_stats->total_mem_op_gaps);
