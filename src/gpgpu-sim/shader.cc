@@ -866,12 +866,13 @@ void scheduler_unit::cycle()
                                 printf("current gap: %u\n", gap);
                                 m_stats->total_issued_mem_ops ++;
                                 m_stats->last_issued_mem_op = gpu_sim_cycle;
-                                index = gap / 50;
+                                const unsigned step = 10;
+                                index = gap / step;
                                 if(index > 9) index = 9;
                                 m_stats->histogram[index]++;
                                 printf("start print histogram\n");
                                 for (int i = 0; i < 10; ++i){
-                                    printf("%d-%d : %u\n", i*50, i*50 + 50, m_stats->histogram[i]);
+                                    printf("%d-%d : %u\n", i*step, i*step + step, m_stats->histogram[i]);
                                 }
                                 printf("end print histogram\n");
                                 printf("gpu_sim_cycle = %u\n", gpu_sim_cycle);
