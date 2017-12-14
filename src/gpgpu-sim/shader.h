@@ -1405,6 +1405,11 @@ struct shader_core_stats_pod {
     unsigned *gpgpu_n_shmem_bank_access;
     long *n_simt_to_mem; // Interconnect power stats
     long *n_mem_to_simt;
+
+    //ryan is hackng here
+    unsigned *total_mem_op_gaps;
+    unsigned *total_issued_mem_ops;
+    //end hacking
 };
 
 class shader_core_stats : public shader_core_stats_pod {

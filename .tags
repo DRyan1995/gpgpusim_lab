@@ -9605,9 +9605,11 @@ total_hits	src/gpuwattch/XML_Parse.h	/^	double total_hits;$/;"	m	struct:__anon16
 total_hits	src/gpuwattch/XML_Parse.h	/^	double total_hits;$/;"	m	struct:__anon20
 total_hits	src/gpuwattch/XML_Parse.h	/^	double total_hits;$/;"	m	struct:__anon21
 total_instructions	src/gpuwattch/XML_Parse.h	/^	double total_instructions;$/;"	m	struct:__anon17
+total_issued_mem_ops	src/gpgpu-sim/shader.h	/^    unsigned *total_issued_mem_ops;$/;"	m	struct:shader_core_stats_pod
 total_load_perc	src/gpuwattch/XML_Parse.h	/^	double total_load_perc;$/;"	m	struct:__anon25
 total_load_perc	src/gpuwattch/XML_Parse.h	/^	double total_load_perc;$/;"	m	struct:__anon26
 total_load_perc	src/gpuwattch/XML_Parse.h	/^	double total_load_perc;$/;"	m	struct:__anon27
+total_mem_op_gaps	src/gpgpu-sim/shader.h	/^    unsigned *total_mem_op_gaps;$/;"	m	struct:shader_core_stats_pod
 total_misses	src/gpuwattch/XML_Parse.h	/^	double total_misses;$/;"	m	struct:__anon12
 total_misses	src/gpuwattch/XML_Parse.h	/^	double total_misses;$/;"	m	struct:__anon13
 total_misses	src/gpuwattch/XML_Parse.h	/^	double total_misses;$/;"	m	struct:__anon14
