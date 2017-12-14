@@ -458,8 +458,8 @@ made_read_mfs	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned made_read_mfs
 gpgpu_n_shmem_bank_access	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *gpgpu_n_shmem_bank_access;$/;"	member	line:1405	struct:shader_core_stats_pod
 n_simt_to_mem	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    long *n_simt_to_mem; \/\/ Interconnect power stats$/;"	member	line:1406	struct:shader_core_stats_pod
 n_mem_to_simt	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    long *n_mem_to_simt;$/;"	member	line:1407	struct:shader_core_stats_pod
-total_mem_op_gaps	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *total_mem_op_gaps;$/;"	member	line:1410	struct:shader_core_stats_pod
-total_issued_mem_ops	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *total_issued_mem_ops;$/;"	member	line:1411	struct:shader_core_stats_pod
+total_mem_op_gaps	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned total_mem_op_gaps;$/;"	member	line:1410	struct:shader_core_stats_pod
+total_issued_mem_ops	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned total_issued_mem_ops;$/;"	member	line:1411	struct:shader_core_stats_pod
 shader_core_stats	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^class shader_core_stats : public shader_core_stats_pod {$/;"	class	line:1415
 shader_core_stats	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    shader_core_stats( const shader_core_config *config )$/;"	function	line:1417	class:shader_core_stats	signature:( const shader_core_config *config )
 ~shader_core_stats	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    ~shader_core_stats()$/;"	function	line:1477	class:shader_core_stats	signature:()

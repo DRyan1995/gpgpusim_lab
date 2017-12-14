@@ -1624,10 +1624,10 @@ STAT_WRAPER_H	src/statwrapper.h	2;"	d
 STORE_OP	src/abstract_hardware_model.h	/^   STORE_OP,$/;"	e	enum:uarch_op_t
 STREAM_MANAGER_H_INCLUDED	src/stream_manager.h	29;"	d
 STRSIZE	src/gpgpu-sim/shader.cc	117;"	d	file:
-STRSIZE	src/gpgpu-sim/shader.cc	1585;"	d	file:
+STRSIZE	src/gpgpu-sim/shader.cc	1589;"	d	file:
 STR_SIZE	src/cuda-sim/cuda-sim.cc	458;"	d	file:
 STR_SIZE	src/cuda-sim/ptx_ir.cc	42;"	d	file:
-STR_SIZE	src/gpgpu-sim/shader.cc	1979;"	d	file:
+STR_SIZE	src/gpgpu-sim/shader.cc	1983;"	d	file:
 SUB_SWITCH_SZ	src/gpuwattch/cacti/highradix.h	/^    double SUB_SWITCH_SZ;$/;"	m	class:HighRadix
 SWAP	src/gpgpu-sim/dram.cc	203;"	d	file:
 SYNC	src/abstract_hardware_model.h	/^   SYNC=1,$/;"	e	enum:uarch_bar_t
@@ -9605,11 +9605,11 @@ total_hits	src/gpuwattch/XML_Parse.h	/^	double total_hits;$/;"	m	struct:__anon16
 total_hits	src/gpuwattch/XML_Parse.h	/^	double total_hits;$/;"	m	struct:__anon20
 total_hits	src/gpuwattch/XML_Parse.h	/^	double total_hits;$/;"	m	struct:__anon21
 total_instructions	src/gpuwattch/XML_Parse.h	/^	double total_instructions;$/;"	m	struct:__anon17
-total_issued_mem_ops	src/gpgpu-sim/shader.h	/^    unsigned *total_issued_mem_ops;$/;"	m	struct:shader_core_stats_pod
+total_issued_mem_ops	src/gpgpu-sim/shader.h	/^    unsigned total_issued_mem_ops;$/;"	m	struct:shader_core_stats_pod
 total_load_perc	src/gpuwattch/XML_Parse.h	/^	double total_load_perc;$/;"	m	struct:__anon25
 total_load_perc	src/gpuwattch/XML_Parse.h	/^	double total_load_perc;$/;"	m	struct:__anon26
 total_load_perc	src/gpuwattch/XML_Parse.h	/^	double total_load_perc;$/;"	m	struct:__anon27
-total_mem_op_gaps	src/gpgpu-sim/shader.h	/^    unsigned *total_mem_op_gaps;$/;"	m	struct:shader_core_stats_pod
+total_mem_op_gaps	src/gpgpu-sim/shader.h	/^    unsigned total_mem_op_gaps;$/;"	m	struct:shader_core_stats_pod
 total_misses	src/gpuwattch/XML_Parse.h	/^	double total_misses;$/;"	m	struct:__anon12
 total_misses	src/gpuwattch/XML_Parse.h	/^	double total_misses;$/;"	m	struct:__anon13
 total_misses	src/gpuwattch/XML_Parse.h	/^	double total_misses;$/;"	m	struct:__anon14

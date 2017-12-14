@@ -820,7 +820,7 @@ void scheduler_unit::cycle()
         unsigned checked=0;
         unsigned issued=0;
         //Ryan is hacking here
-        int last_issued_mem_op=-1;
+        unsigned last_issued_mem_op=0;
 
         //end hacking
         unsigned max_issue = m_shader->m_config->gpgpu_max_insn_issue_per_warp;
@@ -856,10 +856,14 @@ void scheduler_unit::cycle()
                                 issued_inst=true;
                                 warp_inst_issued = true;
                                 //ryan is hacking here
-                                if (last_issued_mem_op != -1)
+                                if (last_issued_mem_op != 0)
                                     m_stats->total_mem_op_gaps += (issued - last_issued_mem_op);
                                 last_issued_mem_op = issued;
                                 m_stats->total_issued_mem_ops ++;
+                                printf("********************\n");
+                                printf("Ryan: total_issued_mem_ops: %u\n ", m_stats->total_issued_mem_ops);
+                                printf("total_mem_op_gaps: %u\n", m_stats->total_mem_op_gaps);
+                                printf("-------------------------\n");
                                 //end hacking
                             }
                         } else {
