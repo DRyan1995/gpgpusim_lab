@@ -1624,10 +1624,10 @@ STAT_WRAPER_H	src/statwrapper.h	2;"	d
 STORE_OP	src/abstract_hardware_model.h	/^   STORE_OP,$/;"	e	enum:uarch_op_t
 STREAM_MANAGER_H_INCLUDED	src/stream_manager.h	29;"	d
 STRSIZE	src/gpgpu-sim/shader.cc	117;"	d	file:
-STRSIZE	src/gpgpu-sim/shader.cc	1589;"	d	file:
+STRSIZE	src/gpgpu-sim/shader.cc	1588;"	d	file:
 STR_SIZE	src/cuda-sim/cuda-sim.cc	458;"	d	file:
 STR_SIZE	src/cuda-sim/ptx_ir.cc	42;"	d	file:
-STR_SIZE	src/gpgpu-sim/shader.cc	1983;"	d	file:
+STR_SIZE	src/gpgpu-sim/shader.cc	1982;"	d	file:
 SUB_SWITCH_SZ	src/gpuwattch/cacti/highradix.h	/^    double SUB_SWITCH_SZ;$/;"	m	class:HighRadix
 SWAP	src/gpgpu-sim/dram.cc	203;"	d	file:
 SYNC	src/abstract_hardware_model.h	/^   SYNC=1,$/;"	e	enum:uarch_bar_t
@@ -6123,6 +6123,7 @@ last_bwutil	src/gpgpu-sim/dram.h	/^   unsigned int last_n_cmd, last_n_activity, 
 last_callback	src/cuda-sim/ptx_sim.h	/^   dram_callback_t last_callback() const { return m_last_dram_callback;}$/;"	f	class:ptx_thread_info
 last_eaddr	src/cuda-sim/ptx_sim.h	/^   addr_t last_eaddr() const { return m_last_effective_address;}$/;"	f	class:ptx_thread_info
 last_gpu_sim_insn	src/gpgpu-sim/gpu-sim.h	/^   unsigned long long  last_gpu_sim_insn;$/;"	m	class:gpgpu_sim
+last_issued_mem_op	src/gpgpu-sim/shader.h	/^    unsigned last_issued_mem_op;$/;"	m	struct:shader_core_stats_pod
 last_liveness_message_time	src/gpgpu-sim/gpu-sim.h	/^   unsigned long long  last_liveness_message_time; $/;"	m	class:gpgpu_sim
 last_n_activity	src/gpgpu-sim/dram.h	/^   unsigned int last_n_cmd, last_n_activity, last_bwutil;$/;"	m	class:dram_t
 last_n_cmd	src/gpgpu-sim/dram.h	/^   unsigned int last_n_cmd, last_n_activity, last_bwutil;$/;"	m	class:dram_t

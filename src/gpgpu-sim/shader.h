@@ -1409,6 +1409,8 @@ struct shader_core_stats_pod {
     //ryan is hackng here
     unsigned total_mem_op_gaps;
     unsigned total_issued_mem_ops;
+    unsigned last_issued_mem_op;
+
     //end hacking
 };
 

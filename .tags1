@@ -4,575 +4,159 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-SHADER_H	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^#define SHADER_H$/;"	macro	line:30
-NO_OP_FLAG	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^#define NO_OP_FLAG /;"	macro	line:59
-READ_PACKET_SIZE	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^#define READ_PACKET_SIZE /;"	macro	line:66
-WRITE_PACKET_SIZE	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^#define WRITE_PACKET_SIZE /;"	macro	line:69
-WRITE_MASK_SIZE	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^#define WRITE_MASK_SIZE /;"	macro	line:71
-thread_ctx_t	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^class thread_ctx_t {$/;"	class	line:74
-m_cta_id	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   unsigned m_cta_id; \/\/ hardware CTA this thread belongs$/;"	member	line:76	class:thread_ctx_t
-n_insn	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   unsigned n_insn;$/;"	member	line:79	class:thread_ctx_t
-n_insn_ac	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   unsigned n_insn_ac;$/;"	member	line:80	class:thread_ctx_t
-n_l1_mis_ac	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   unsigned n_l1_mis_ac;$/;"	member	line:81	class:thread_ctx_t
-n_l1_mrghit_ac	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   unsigned n_l1_mrghit_ac;$/;"	member	line:82	class:thread_ctx_t
-n_l1_access_ac	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   unsigned n_l1_access_ac;$/;"	member	line:83	class:thread_ctx_t
-m_active	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   bool m_active;$/;"	member	line:85	class:thread_ctx_t
-shd_warp_t	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^class shd_warp_t {$/;"	class	line:88
-shd_warp_t	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    shd_warp_t( class shader_core_ctx *shader, unsigned warp_size)$/;"	function	line:90	class:shd_warp_t	signature:( class shader_core_ctx *shader, unsigned warp_size)
-reset	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    void reset()$/;"	function	line:97	class:shd_warp_t	signature:()
-init	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    void init( address_type start_pc,$/;"	function	line:112	class:shd_warp_t	signature:( address_type start_pc, unsigned cta_id, unsigned wid, const std::bitset<MAX_WARP_SIZE> &active, unsigned dynamic_warp_id )
-done_exit	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    bool done_exit() const { return m_done_exit; }$/;"	function	line:133	class:shd_warp_t	signature:() const
-set_done_exit	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    void set_done_exit() { m_done_exit=true; }$/;"	function	line:134	class:shd_warp_t	signature:()
-get_n_completed	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned get_n_completed() const { return n_completed; }$/;"	function	line:139	class:shd_warp_t	signature:() const
-set_completed	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    void set_completed( unsigned lane )$/;"	function	line:140	class:shd_warp_t	signature:( unsigned lane )
-set_last_fetch	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    void set_last_fetch( unsigned long long sim_cycle ) { m_last_fetch=sim_cycle; }$/;"	function	line:147	class:shd_warp_t	signature:( unsigned long long sim_cycle )
-get_n_atomic	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned get_n_atomic() const { return m_n_atomic; }$/;"	function	line:149	class:shd_warp_t	signature:() const
-inc_n_atomic	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    void inc_n_atomic() { m_n_atomic++; }$/;"	function	line:150	class:shd_warp_t	signature:()
-dec_n_atomic	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    void dec_n_atomic(unsigned n) { m_n_atomic-=n; }$/;"	function	line:151	class:shd_warp_t	signature:(unsigned n)
-set_membar	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    void set_membar() { m_membar=true; }$/;"	function	line:153	class:shd_warp_t	signature:()
-clear_membar	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    void clear_membar() { m_membar=false; }$/;"	function	line:154	class:shd_warp_t	signature:()
-get_membar	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    bool get_membar() const { return m_membar; }$/;"	function	line:155	class:shd_warp_t	signature:() const
-get_pc	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    address_type get_pc() const { return m_next_pc; }$/;"	function	line:156	class:shd_warp_t	signature:() const
-set_next_pc	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    void set_next_pc( address_type pc ) { m_next_pc = pc; }$/;"	function	line:157	class:shd_warp_t	signature:( address_type pc )
-store_info_of_last_inst_at_barrier	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    void store_info_of_last_inst_at_barrier(const warp_inst_t *pI){ m_inst_at_barrier = pI;}$/;"	function	line:159	class:shd_warp_t	signature:(const warp_inst_t *pI)
-restore_info_of_last_inst_at_barrier	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    const warp_inst_t * restore_info_of_last_inst_at_barrier(){ return m_inst_at_barrier;}$/;"	function	line:160	class:shd_warp_t	signature:()
-ibuffer_fill	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    void ibuffer_fill( unsigned slot, const warp_inst_t *pI )$/;"	function	line:162	class:shd_warp_t	signature:( unsigned slot, const warp_inst_t *pI )
-ibuffer_empty	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    bool ibuffer_empty() const$/;"	function	line:169	class:shd_warp_t	signature:() const
-ibuffer_flush	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    void ibuffer_flush()$/;"	function	line:176	class:shd_warp_t	signature:()
-ibuffer_next_inst	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    const warp_inst_t *ibuffer_next_inst() { return m_ibuffer[m_next].m_inst; }$/;"	function	line:185	class:shd_warp_t	signature:()
-ibuffer_next_valid	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    bool ibuffer_next_valid() { return m_ibuffer[m_next].m_valid; }$/;"	function	line:186	class:shd_warp_t	signature:()
-ibuffer_free	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    void ibuffer_free()$/;"	function	line:187	class:shd_warp_t	signature:()
-ibuffer_step	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    void ibuffer_step() { m_next = (m_next+1)%IBUFFER_SIZE; }$/;"	function	line:192	class:shd_warp_t	signature:()
-imiss_pending	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    bool imiss_pending() const { return m_imiss_pending; }$/;"	function	line:194	class:shd_warp_t	signature:() const
-set_imiss_pending	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    void set_imiss_pending() { m_imiss_pending=true; }$/;"	function	line:195	class:shd_warp_t	signature:()
-clear_imiss_pending	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    void clear_imiss_pending() { m_imiss_pending=false; }$/;"	function	line:196	class:shd_warp_t	signature:()
-stores_done	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    bool stores_done() const { return m_stores_outstanding == 0; }$/;"	function	line:198	class:shd_warp_t	signature:() const
-inc_store_req	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    void inc_store_req() { m_stores_outstanding++; }$/;"	function	line:199	class:shd_warp_t	signature:()
-dec_store_req	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    void dec_store_req()$/;"	function	line:200	class:shd_warp_t	signature:()
-num_inst_in_buffer	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned num_inst_in_buffer() const$/;"	function	line:206	class:shd_warp_t	signature:() const
-num_inst_in_pipeline	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned num_inst_in_pipeline() const { return m_inst_in_pipeline;}$/;"	function	line:215	class:shd_warp_t	signature:() const
-num_issued_inst_in_pipeline	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned num_issued_inst_in_pipeline() const {return (num_inst_in_pipeline()-num_inst_in_buffer());}$/;"	function	line:216	class:shd_warp_t	signature:() const
-inst_in_pipeline	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    bool inst_in_pipeline() const { return m_inst_in_pipeline > 0; }$/;"	function	line:217	class:shd_warp_t	signature:() const
-inc_inst_in_pipeline	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    void inc_inst_in_pipeline() { m_inst_in_pipeline++; }$/;"	function	line:218	class:shd_warp_t	signature:()
-dec_inst_in_pipeline	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    void dec_inst_in_pipeline()$/;"	function	line:219	class:shd_warp_t	signature:()
-get_cta_id	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned get_cta_id() const { return m_cta_id; }$/;"	function	line:225	class:shd_warp_t	signature:() const
-get_dynamic_warp_id	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned get_dynamic_warp_id() const { return m_dynamic_warp_id; }$/;"	function	line:227	class:shd_warp_t	signature:() const
-get_warp_id	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned get_warp_id() const { return m_warp_id; }$/;"	function	line:228	class:shd_warp_t	signature:() const
-IBUFFER_SIZE	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    static const unsigned IBUFFER_SIZE=2;$/;"	member	line:231	class:shd_warp_t
-m_shader	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    class shader_core_ctx *m_shader;$/;"	member	line:232	class:shd_warp_t	typeref:class:shd_warp_t::shader_core_ctx
-m_cta_id	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned m_cta_id;$/;"	member	line:233	class:shd_warp_t
-m_warp_id	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned m_warp_id;$/;"	member	line:234	class:shd_warp_t
-m_warp_size	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned m_warp_size;$/;"	member	line:235	class:shd_warp_t
-m_dynamic_warp_id	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned m_dynamic_warp_id;$/;"	member	line:236	class:shd_warp_t
-m_next_pc	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    address_type m_next_pc;$/;"	member	line:238	class:shd_warp_t
-n_completed	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned n_completed;          \/\/ number of threads in warp completed$/;"	member	line:239	class:shd_warp_t
-m_active_threads	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    std::bitset<MAX_WARP_SIZE> m_active_threads;$/;"	member	line:240	class:shd_warp_t
-m_imiss_pending	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    bool m_imiss_pending;$/;"	member	line:242	class:shd_warp_t
-ibuffer_entry	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    struct ibuffer_entry {$/;"	struct	line:244	class:shd_warp_t
-ibuffer_entry	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^       ibuffer_entry() { m_valid = false; m_inst = NULL; }$/;"	function	line:245	struct:shd_warp_t::ibuffer_entry	signature:()
-m_inst	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^       const warp_inst_t *m_inst;$/;"	member	line:246	struct:shd_warp_t::ibuffer_entry
-m_valid	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^       bool m_valid;$/;"	member	line:247	struct:shd_warp_t::ibuffer_entry
-m_inst_at_barrier	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    const warp_inst_t *m_inst_at_barrier;$/;"	member	line:250	class:shd_warp_t
-m_ibuffer	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    ibuffer_entry m_ibuffer[IBUFFER_SIZE];$/;"	member	line:251	class:shd_warp_t
-m_next	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned m_next;$/;"	member	line:252	class:shd_warp_t
-m_n_atomic	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned m_n_atomic;           \/\/ number of outstanding atomic operations$/;"	member	line:254	class:shd_warp_t
-m_membar	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    bool     m_membar;             \/\/ if true, warp is waiting at memory barrier$/;"	member	line:255	class:shd_warp_t
-m_done_exit	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    bool m_done_exit; \/\/ true once thread exit has been registered for threads in this warp$/;"	member	line:257	class:shd_warp_t
-m_last_fetch	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned long long m_last_fetch;$/;"	member	line:259	class:shd_warp_t
-m_stores_outstanding	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned m_stores_outstanding; \/\/ number of store requests sent but not yet acknowledged$/;"	member	line:261	class:shd_warp_t
-m_inst_in_pipeline	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned m_inst_in_pipeline;$/;"	member	line:262	class:shd_warp_t
-hw_tid_from_wid	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^inline unsigned hw_tid_from_wid(unsigned wid, unsigned warp_size, unsigned i){return wid * warp_size + i;};$/;"	function	line:267	signature:(unsigned wid, unsigned warp_size, unsigned i)
-wid_from_hw_tid	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^inline unsigned wid_from_hw_tid(unsigned tid, unsigned warp_size){return tid\/warp_size;};$/;"	function	line:268	signature:(unsigned tid, unsigned warp_size)
-WARP_PER_CTA_MAX	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^const unsigned WARP_PER_CTA_MAX = 48;$/;"	variable	line:270
-warp_set_t	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^typedef std::bitset<WARP_PER_CTA_MAX> warp_set_t;$/;"	typedef	line:271
-scheduler_prioritization_type	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^enum scheduler_prioritization_type$/;"	enum	line:279
-SCHEDULER_PRIORITIZATION_LRR	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    SCHEDULER_PRIORITIZATION_LRR = 0, \/\/ Loose Round Robin$/;"	enumerator	line:281	enum:scheduler_prioritization_type
-SCHEDULER_PRIORITIZATION_SRR	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    SCHEDULER_PRIORITIZATION_SRR, \/\/ Strict Round Robin$/;"	enumerator	line:282	enum:scheduler_prioritization_type
-SCHEDULER_PRIORITIZATION_GTO	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    SCHEDULER_PRIORITIZATION_GTO, \/\/ Greedy Then Oldest$/;"	enumerator	line:283	enum:scheduler_prioritization_type
-SCHEDULER_PRIORITIZATION_GTLRR	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    SCHEDULER_PRIORITIZATION_GTLRR, \/\/ Greedy Then Loose Round Robin$/;"	enumerator	line:284	enum:scheduler_prioritization_type
-SCHEDULER_PRIORITIZATION_GTY	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    SCHEDULER_PRIORITIZATION_GTY, \/\/ Greedy Then Youngest$/;"	enumerator	line:285	enum:scheduler_prioritization_type
-SCHEDULER_PRIORITIZATION_OLDEST	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    SCHEDULER_PRIORITIZATION_OLDEST, \/\/ Oldest First$/;"	enumerator	line:286	enum:scheduler_prioritization_type
-SCHEDULER_PRIORITIZATION_YOUNGEST	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    SCHEDULER_PRIORITIZATION_YOUNGEST, \/\/ Youngest First$/;"	enumerator	line:287	enum:scheduler_prioritization_type
-concrete_scheduler	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^enum concrete_scheduler$/;"	enum	line:292
-CONCRETE_SCHEDULER_LRR	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    CONCRETE_SCHEDULER_LRR = 0,$/;"	enumerator	line:294	enum:concrete_scheduler
-CONCRETE_SCHEDULER_GTO	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    CONCRETE_SCHEDULER_GTO,$/;"	enumerator	line:295	enum:concrete_scheduler
-CONCRETE_SCHEDULER_TWO_LEVEL_ACTIVE	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    CONCRETE_SCHEDULER_TWO_LEVEL_ACTIVE,$/;"	enumerator	line:296	enum:concrete_scheduler
-CONCRETE_SCHEDULER_WARP_LIMITING	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    CONCRETE_SCHEDULER_WARP_LIMITING,$/;"	enumerator	line:297	enum:concrete_scheduler
-NUM_CONCRETE_SCHEDULERS	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    NUM_CONCRETE_SCHEDULERS$/;"	enumerator	line:298	enum:concrete_scheduler
-scheduler_unit	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^class scheduler_unit { \/\/this can be copied freely, so can be used in std containers.$/;"	class	line:301
-scheduler_unit	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    scheduler_unit(shader_core_stats* stats, shader_core_ctx* shader,$/;"	function	line:303	class:scheduler_unit	signature:(shader_core_stats* stats, shader_core_ctx* shader, Scoreboard* scoreboard, simt_stack** simt, std::vector<shd_warp_t>* warp, register_set* sp_out, register_set* sfu_out, register_set* mem_out, int id)
-~scheduler_unit	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    virtual ~scheduler_unit(){}$/;"	function	line:313	class:scheduler_unit	signature:()
-add_supervised_warp_id	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    virtual void add_supervised_warp_id(int i) {$/;"	function	line:314	class:scheduler_unit	signature:(int i)
-done_adding_supervised_warps	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    virtual void done_adding_supervised_warps() {$/;"	function	line:317	class:scheduler_unit	signature:()
-OrderingType	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    enum OrderingType$/;"	enum	line:335	class:scheduler_unit
-ORDERING_GREEDY_THEN_PRIORITY_FUNC	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^        ORDERING_GREEDY_THEN_PRIORITY_FUNC = 0,$/;"	enumerator	line:339	enum:scheduler_unit::OrderingType
-ORDERED_PRIORITY_FUNC_ONLY	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^        ORDERED_PRIORITY_FUNC_ONLY,$/;"	enumerator	line:342	enum:scheduler_unit::OrderingType
-NUM_ORDERING	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^        NUM_ORDERING,$/;"	enumerator	line:343	enum:scheduler_unit::OrderingType
-m_next_cycle_prioritized_warps	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    std::vector< shd_warp_t* > m_next_cycle_prioritized_warps;$/;"	member	line:368	class:scheduler_unit
-m_supervised_warps	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    std::vector< shd_warp_t* > m_supervised_warps;$/;"	member	line:373	class:scheduler_unit
-m_last_supervised_issued	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    std::vector< shd_warp_t* >::const_iterator m_last_supervised_issued;$/;"	member	line:375	class:scheduler_unit
-m_stats	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    shader_core_stats *m_stats;$/;"	member	line:376	class:scheduler_unit
-m_shader	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    shader_core_ctx* m_shader;$/;"	member	line:377	class:scheduler_unit
-m_scoreboard	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    Scoreboard* m_scoreboard;$/;"	member	line:379	class:scheduler_unit
-m_simt_stack	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    simt_stack** m_simt_stack;$/;"	member	line:380	class:scheduler_unit
-m_warp	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    std::vector<shd_warp_t>* m_warp;$/;"	member	line:382	class:scheduler_unit
-m_sp_out	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    register_set* m_sp_out;$/;"	member	line:383	class:scheduler_unit
-m_sfu_out	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    register_set* m_sfu_out;$/;"	member	line:384	class:scheduler_unit
-m_mem_out	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    register_set* m_mem_out;$/;"	member	line:385	class:scheduler_unit
-m_id	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    int m_id;$/;"	member	line:387	class:scheduler_unit
-lrr_scheduler	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^class lrr_scheduler : public scheduler_unit {$/;"	class	line:390
-lrr_scheduler	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^	lrr_scheduler ( shader_core_stats* stats, shader_core_ctx* shader,$/;"	function	line:392	class:lrr_scheduler	signature:( shader_core_stats* stats, shader_core_ctx* shader, Scoreboard* scoreboard, simt_stack** simt, std::vector<shd_warp_t>* warp, register_set* sp_out, register_set* sfu_out, register_set* mem_out, int id )
-~lrr_scheduler	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^	virtual ~lrr_scheduler () {}$/;"	function	line:400	class:lrr_scheduler	signature:()
-done_adding_supervised_warps	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    virtual void done_adding_supervised_warps() {$/;"	function	line:402	class:lrr_scheduler	signature:()
-gto_scheduler	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^class gto_scheduler : public scheduler_unit {$/;"	class	line:407
-gto_scheduler	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^	gto_scheduler ( shader_core_stats* stats, shader_core_ctx* shader,$/;"	function	line:409	class:gto_scheduler	signature:( shader_core_stats* stats, shader_core_ctx* shader, Scoreboard* scoreboard, simt_stack** simt, std::vector<shd_warp_t>* warp, register_set* sp_out, register_set* sfu_out, register_set* mem_out, int id )
-~gto_scheduler	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^	virtual ~gto_scheduler () {}$/;"	function	line:417	class:gto_scheduler	signature:()
-done_adding_supervised_warps	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    virtual void done_adding_supervised_warps() {$/;"	function	line:419	class:gto_scheduler	signature:()
-two_level_active_scheduler	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^class two_level_active_scheduler : public scheduler_unit {$/;"	class	line:426
-two_level_active_scheduler	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^	two_level_active_scheduler ( shader_core_stats* stats, shader_core_ctx* shader,$/;"	function	line:428	class:two_level_active_scheduler	signature:( shader_core_stats* stats, shader_core_ctx* shader, Scoreboard* scoreboard, simt_stack** simt, std::vector<shd_warp_t>* warp, register_set* sp_out, register_set* sfu_out, register_set* mem_out, int id, char* config_str )
-~two_level_active_scheduler	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^	virtual ~two_level_active_scheduler () {}$/;"	function	line:450	class:two_level_active_scheduler	signature:()
-add_supervised_warp_id	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^	void add_supervised_warp_id(int i) {$/;"	function	line:452	class:two_level_active_scheduler	signature:(int i)
-done_adding_supervised_warps	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    virtual void done_adding_supervised_warps() {$/;"	function	line:459	class:two_level_active_scheduler	signature:()
-m_pending_warps	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^	std::deque< shd_warp_t* > m_pending_warps;$/;"	member	line:469	class:two_level_active_scheduler
-m_inner_level_prioritization	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    scheduler_prioritization_type m_inner_level_prioritization;$/;"	member	line:470	class:two_level_active_scheduler
-m_outer_level_prioritization	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    scheduler_prioritization_type m_outer_level_prioritization;$/;"	member	line:471	class:two_level_active_scheduler
-m_max_active_warps	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^	unsigned m_max_active_warps;$/;"	member	line:472	class:two_level_active_scheduler
-swl_scheduler	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^class swl_scheduler : public scheduler_unit {$/;"	class	line:476
-~swl_scheduler	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^	virtual ~swl_scheduler () {}$/;"	function	line:486	class:swl_scheduler	signature:()
-done_adding_supervised_warps	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    virtual void done_adding_supervised_warps() {$/;"	function	line:488	class:swl_scheduler	signature:()
-m_prioritization	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    scheduler_prioritization_type m_prioritization;$/;"	member	line:493	class:swl_scheduler
-m_num_warps_to_limit	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned m_num_warps_to_limit;$/;"	member	line:494	class:swl_scheduler
-opndcoll_rfu_t	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^class opndcoll_rfu_t { \/\/ operand collector based register file unit$/;"	class	line:499
-opndcoll_rfu_t	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   opndcoll_rfu_t()$/;"	function	line:502	class:opndcoll_rfu_t	signature:()
-port_vector_t	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   typedef std::vector<register_set*> port_vector_t;$/;"	typedef	line:509	class:opndcoll_rfu_t
-uint_vector_t	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   typedef std::vector<unsigned int> uint_vector_t;$/;"	typedef	line:510	class:opndcoll_rfu_t
-step	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   void step()$/;"	function	line:517	class:opndcoll_rfu_t	signature:()
-dump	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   void dump( FILE *fp ) const$/;"	function	line:526	class:opndcoll_rfu_t	signature:( FILE *fp ) const
-shader_core	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   shader_core_ctx *shader_core() { return m_shader; }$/;"	function	line:537	class:opndcoll_rfu_t	signature:()
-process_banks	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   void process_banks()$/;"	function	line:541	class:opndcoll_rfu_t	signature:()
-op_t	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   class op_t {$/;"	class	line:554	class:opndcoll_rfu_t
-op_t	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      op_t() { m_valid = false; }$/;"	function	line:557	class:opndcoll_rfu_t::op_t	signature:()
-op_t	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      op_t( collector_unit_t *cu, unsigned op, unsigned reg, unsigned num_banks, unsigned bank_warp_shift )$/;"	function	line:558	class:opndcoll_rfu_t::op_t	signature:( collector_unit_t *cu, unsigned op, unsigned reg, unsigned num_banks, unsigned bank_warp_shift )
-op_t	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      op_t( const warp_inst_t *warp, unsigned reg, unsigned num_banks, unsigned bank_warp_shift )$/;"	function	line:567	class:opndcoll_rfu_t::op_t	signature:( const warp_inst_t *warp, unsigned reg, unsigned num_banks, unsigned bank_warp_shift )
-valid	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      bool valid() const { return m_valid; }$/;"	function	line:578	class:opndcoll_rfu_t::op_t	signature:() const
-get_reg	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      unsigned get_reg() const$/;"	function	line:579	class:opndcoll_rfu_t::op_t	signature:() const
-get_wid	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      unsigned get_wid() const$/;"	function	line:584	class:opndcoll_rfu_t::op_t	signature:() const
-get_active_count	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      unsigned get_active_count() const$/;"	function	line:590	class:opndcoll_rfu_t::op_t	signature:() const
-get_active_mask	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      const active_mask_t & get_active_mask()$/;"	function	line:596	class:opndcoll_rfu_t::op_t	signature:()
-get_sp_op	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      unsigned get_sp_op() const$/;"	function	line:602	class:opndcoll_rfu_t::op_t	signature:() const
-get_oc_id	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      unsigned get_oc_id() const { return m_cu->get_id(); }$/;"	function	line:608	class:opndcoll_rfu_t::op_t	signature:() const
-get_bank	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      unsigned get_bank() const { return m_bank; }$/;"	function	line:609	class:opndcoll_rfu_t::op_t	signature:() const
-get_operand	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      unsigned get_operand() const { return m_operand; }$/;"	function	line:610	class:opndcoll_rfu_t::op_t	signature:() const
-dump	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      void dump(FILE *fp) const$/;"	function	line:611	class:opndcoll_rfu_t::op_t	signature:(FILE *fp) const
-get_reg_string	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      std::string get_reg_string() const$/;"	function	line:618	class:opndcoll_rfu_t::op_t	signature:() const
-reset	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      void reset() { m_valid = false; }$/;"	function	line:626	class:opndcoll_rfu_t::op_t	signature:()
-m_valid	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      bool m_valid;$/;"	member	line:628	class:opndcoll_rfu_t::op_t
-m_cu	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      collector_unit_t  *m_cu;$/;"	member	line:629	class:opndcoll_rfu_t::op_t
-m_warp	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      const warp_inst_t *m_warp;$/;"	member	line:630	class:opndcoll_rfu_t::op_t
-m_operand	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      unsigned  m_operand; \/\/ operand offset in instruction. e.g., add r1,r2,r3; r2 is oprd 0, r3 is 1 (r1 is dst)$/;"	member	line:631	class:opndcoll_rfu_t::op_t
-m_register	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      unsigned  m_register;$/;"	member	line:632	class:opndcoll_rfu_t::op_t
-m_bank	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      unsigned  m_bank;$/;"	member	line:633	class:opndcoll_rfu_t::op_t
-alloc_t	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   enum alloc_t {$/;"	enum	line:636	class:opndcoll_rfu_t
-NO_ALLOC	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      NO_ALLOC,$/;"	enumerator	line:637	enum:opndcoll_rfu_t::alloc_t
-READ_ALLOC	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      READ_ALLOC,$/;"	enumerator	line:638	enum:opndcoll_rfu_t::alloc_t
-WRITE_ALLOC	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      WRITE_ALLOC,$/;"	enumerator	line:639	enum:opndcoll_rfu_t::alloc_t
-allocation_t	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   class allocation_t {$/;"	class	line:642	class:opndcoll_rfu_t
-allocation_t	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      allocation_t() { m_allocation = NO_ALLOC; }$/;"	function	line:644	class:opndcoll_rfu_t::allocation_t	signature:()
-is_read	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      bool is_read() const { return m_allocation==READ_ALLOC; }$/;"	function	line:645	class:opndcoll_rfu_t::allocation_t	signature:() const
-is_write	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      bool is_write() const {return m_allocation==WRITE_ALLOC; }$/;"	function	line:646	class:opndcoll_rfu_t::allocation_t	signature:() const
-is_free	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      bool is_free() const {return m_allocation==NO_ALLOC; }$/;"	function	line:647	class:opndcoll_rfu_t::allocation_t	signature:() const
-dump	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      void dump(FILE *fp) const {$/;"	function	line:648	class:opndcoll_rfu_t::allocation_t	signature:(FILE *fp) const
-alloc_read	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      void alloc_read( const op_t &op )  { assert(is_free()); m_allocation=READ_ALLOC; m_op=op; }$/;"	function	line:654	class:opndcoll_rfu_t::allocation_t	signature:( const op_t &op )
-alloc_write	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      void alloc_write( const op_t &op ) { assert(is_free()); m_allocation=WRITE_ALLOC; m_op=op; }$/;"	function	line:655	class:opndcoll_rfu_t::allocation_t	signature:( const op_t &op )
-reset	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      void reset() { m_allocation = NO_ALLOC; }$/;"	function	line:656	class:opndcoll_rfu_t::allocation_t	signature:()
-m_allocation	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      enum alloc_t m_allocation;$/;"	member	line:658	class:opndcoll_rfu_t::allocation_t	typeref:enum:opndcoll_rfu_t::allocation_t::alloc_t
-m_op	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      op_t m_op;$/;"	member	line:659	class:opndcoll_rfu_t::allocation_t
-arbiter_t	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   class arbiter_t {$/;"	class	line:662	class:opndcoll_rfu_t
-arbiter_t	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      arbiter_t()$/;"	function	line:665	class:opndcoll_rfu_t::arbiter_t	signature:()
-init	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      void init( unsigned num_cu, unsigned num_banks )$/;"	function	line:675	class:opndcoll_rfu_t::arbiter_t	signature:( unsigned num_cu, unsigned num_banks )
-dump	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      void dump(FILE *fp) const$/;"	function	line:695	class:opndcoll_rfu_t::arbiter_t	signature:(FILE *fp) const
-add_read_requests	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      void add_read_requests( collector_unit_t *cu )$/;"	function	line:719	class:opndcoll_rfu_t::arbiter_t	signature:( collector_unit_t *cu )
-bank_idle	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      bool bank_idle( unsigned bank ) const$/;"	function	line:730	class:opndcoll_rfu_t::arbiter_t	signature:( unsigned bank ) const
-allocate_bank_for_write	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      void allocate_bank_for_write( unsigned bank, const op_t &op )$/;"	function	line:734	class:opndcoll_rfu_t::arbiter_t	signature:( unsigned bank, const op_t &op )
-allocate_for_read	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      void allocate_for_read( unsigned bank, const op_t &op )$/;"	function	line:739	class:opndcoll_rfu_t::arbiter_t	signature:( unsigned bank, const op_t &op )
-reset_alloction	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      void reset_alloction()$/;"	function	line:744	class:opndcoll_rfu_t::arbiter_t	signature:()
-m_num_banks	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      unsigned m_num_banks;$/;"	member	line:751	class:opndcoll_rfu_t::arbiter_t
-m_num_collectors	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      unsigned m_num_collectors;$/;"	member	line:752	class:opndcoll_rfu_t::arbiter_t
-m_allocated_bank	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      allocation_t *m_allocated_bank; \/\/ bank # -> register that wins$/;"	member	line:754	class:opndcoll_rfu_t::arbiter_t
-m_queue	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      std::list<op_t> *m_queue;$/;"	member	line:755	class:opndcoll_rfu_t::arbiter_t
-m_allocator_rr_head	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      unsigned *m_allocator_rr_head; \/\/ cu # -> next bank to check for request (rr-arb)$/;"	member	line:757	class:opndcoll_rfu_t::arbiter_t
-m_last_cu	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      unsigned  m_last_cu; \/\/ first cu to check while arb-ing banks (rr)$/;"	member	line:758	class:opndcoll_rfu_t::arbiter_t
-_inmatch	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      int *_inmatch;$/;"	member	line:760	class:opndcoll_rfu_t::arbiter_t
-_outmatch	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      int *_outmatch;$/;"	member	line:761	class:opndcoll_rfu_t::arbiter_t
-_request	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      int **_request;$/;"	member	line:762	class:opndcoll_rfu_t::arbiter_t
-input_port_t	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   class input_port_t {$/;"	class	line:765	class:opndcoll_rfu_t
-input_port_t	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^       input_port_t(port_vector_t & input, port_vector_t & output, uint_vector_t cu_sets)$/;"	function	line:767	class:opndcoll_rfu_t::input_port_t	signature:(port_vector_t & input, port_vector_t & output, uint_vector_t cu_sets)
-m_in	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^       port_vector_t m_in,m_out;$/;"	member	line:774	class:opndcoll_rfu_t::input_port_t
-m_out	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^       port_vector_t m_in,m_out;$/;"	member	line:774	class:opndcoll_rfu_t::input_port_t
-m_cu_sets	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^       uint_vector_t m_cu_sets;$/;"	member	line:775	class:opndcoll_rfu_t::input_port_t
-collector_unit_t	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   class collector_unit_t {$/;"	class	line:778	class:opndcoll_rfu_t
-collector_unit_t	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      collector_unit_t()$/;"	function	line:781	class:opndcoll_rfu_t::collector_unit_t	signature:()
-get_operands	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      const op_t *get_operands() const { return m_src_op; }$/;"	function	line:794	class:opndcoll_rfu_t::collector_unit_t	signature:() const
-get_warp_id	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      unsigned get_warp_id() const { return m_warp_id; }$/;"	function	line:797	class:opndcoll_rfu_t::collector_unit_t	signature:() const
-get_active_count	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      unsigned get_active_count() const { return m_warp->active_count(); }$/;"	function	line:798	class:opndcoll_rfu_t::collector_unit_t	signature:() const
-get_active_mask	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      const active_mask_t & get_active_mask() const { return m_warp->get_active_mask(); }$/;"	function	line:799	class:opndcoll_rfu_t::collector_unit_t	signature:() const
-get_sp_op	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      unsigned get_sp_op() const { return m_warp->sp_op; }$/;"	function	line:800	class:opndcoll_rfu_t::collector_unit_t	signature:() const
-get_id	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      unsigned get_id() const { return m_cuid; } \/\/ returns CU hw id$/;"	function	line:801	class:opndcoll_rfu_t::collector_unit_t	signature:() const
-collect_operand	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      void collect_operand( unsigned op )$/;"	function	line:811	class:opndcoll_rfu_t::collector_unit_t	signature:( unsigned op )
-get_num_operands	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      unsigned get_num_operands() const{$/;"	function	line:815	class:opndcoll_rfu_t::collector_unit_t	signature:() const
-get_num_regs	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      unsigned get_num_regs() const{$/;"	function	line:818	class:opndcoll_rfu_t::collector_unit_t	signature:() const
-is_free	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      bool is_free(){return m_free;}$/;"	function	line:822	class:opndcoll_rfu_t::collector_unit_t	signature:()
-m_free	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      bool m_free;$/;"	member	line:825	class:opndcoll_rfu_t::collector_unit_t
-m_cuid	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      unsigned m_cuid; \/\/ collector unit hw id$/;"	member	line:826	class:opndcoll_rfu_t::collector_unit_t
-m_warp_id	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      unsigned m_warp_id;$/;"	member	line:827	class:opndcoll_rfu_t::collector_unit_t
-m_warp	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      warp_inst_t  *m_warp;$/;"	member	line:828	class:opndcoll_rfu_t::collector_unit_t
-m_output_register	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      register_set* m_output_register; \/\/ pipeline register to issue to when ready$/;"	member	line:829	class:opndcoll_rfu_t::collector_unit_t
-m_src_op	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      op_t *m_src_op;$/;"	member	line:830	class:opndcoll_rfu_t::collector_unit_t
-m_not_ready	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      std::bitset<MAX_REG_OPERANDS*2> m_not_ready;$/;"	member	line:831	class:opndcoll_rfu_t::collector_unit_t
-m_num_banks	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      unsigned m_num_banks;$/;"	member	line:832	class:opndcoll_rfu_t::collector_unit_t
-m_bank_warp_shift	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      unsigned m_bank_warp_shift;$/;"	member	line:833	class:opndcoll_rfu_t::collector_unit_t
-m_rfu	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      opndcoll_rfu_t *m_rfu;$/;"	member	line:834	class:opndcoll_rfu_t::collector_unit_t
-dispatch_unit_t	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   class dispatch_unit_t {$/;"	class	line:838	class:opndcoll_rfu_t
-dispatch_unit_t	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      dispatch_unit_t(std::vector<collector_unit_t>* cus)$/;"	function	line:840	class:opndcoll_rfu_t::dispatch_unit_t	signature:(std::vector<collector_unit_t>* cus)
-find_ready	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      collector_unit_t *find_ready()$/;"	function	line:848	class:opndcoll_rfu_t::dispatch_unit_t	signature:()
-m_num_collectors	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      unsigned m_num_collectors;$/;"	member	line:861	class:opndcoll_rfu_t::dispatch_unit_t
-m_collector_units	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      std::vector<collector_unit_t>* m_collector_units;$/;"	member	line:862	class:opndcoll_rfu_t::dispatch_unit_t
-m_last_cu	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      unsigned m_last_cu; \/\/ dispatch ready cu's rr$/;"	member	line:863	class:opndcoll_rfu_t::dispatch_unit_t
-m_next_cu	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^      unsigned m_next_cu;  \/\/ for initialization$/;"	member	line:864	class:opndcoll_rfu_t::dispatch_unit_t
-m_initialized	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   bool m_initialized;$/;"	member	line:868	class:opndcoll_rfu_t
-m_num_collector_sets	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   unsigned m_num_collector_sets;$/;"	member	line:870	class:opndcoll_rfu_t
-m_num_banks	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   unsigned m_num_banks;$/;"	member	line:872	class:opndcoll_rfu_t
-m_bank_warp_shift	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   unsigned m_bank_warp_shift;$/;"	member	line:873	class:opndcoll_rfu_t
-m_warp_size	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   unsigned m_warp_size;$/;"	member	line:874	class:opndcoll_rfu_t
-m_cu	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   std::vector<collector_unit_t *> m_cu;$/;"	member	line:875	class:opndcoll_rfu_t
-m_arbiter	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   arbiter_t m_arbiter;$/;"	member	line:876	class:opndcoll_rfu_t
-m_in_ports	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   std::vector<input_port_t> m_in_ports;$/;"	member	line:884	class:opndcoll_rfu_t
-cu_sets_t	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   typedef std::map<unsigned \/* collector set *\/, std::vector<collector_unit_t> \/*collector sets*\/ > cu_sets_t;$/;"	typedef	line:885	class:opndcoll_rfu_t
-m_cus	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   cu_sets_t m_cus;$/;"	member	line:886	class:opndcoll_rfu_t
-m_dispatch_units	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   std::vector<dispatch_unit_t> m_dispatch_units;$/;"	member	line:887	class:opndcoll_rfu_t
-m_shader	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   shader_core_ctx                 *m_shader;$/;"	member	line:892	class:opndcoll_rfu_t
-barrier_set_t	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^class barrier_set_t {$/;"	class	line:895
-cta_to_warp_t	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   typedef std::map<unsigned, warp_set_t >  cta_to_warp_t;$/;"	typedef	line:905	class:barrier_set_t
-bar_id_to_warp_t	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   typedef std::map<unsigned, warp_set_t >  bar_id_to_warp_t; \/*set of warps reached a specific barrier id*\/$/;"	typedef	line:906	class:barrier_set_t
-m_max_cta_per_core	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   unsigned m_max_cta_per_core;$/;"	member	line:923	class:barrier_set_t
-m_max_warps_per_core	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   unsigned m_max_warps_per_core;$/;"	member	line:924	class:barrier_set_t
-m_max_barriers_per_cta	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   unsigned m_max_barriers_per_cta;$/;"	member	line:925	class:barrier_set_t
-m_warp_size	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   unsigned m_warp_size;$/;"	member	line:926	class:barrier_set_t
-m_cta_to_warps	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   cta_to_warp_t m_cta_to_warps;$/;"	member	line:927	class:barrier_set_t
-m_bar_id_to_warps	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   bar_id_to_warp_t m_bar_id_to_warps;$/;"	member	line:928	class:barrier_set_t
-m_warp_active	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   warp_set_t m_warp_active;$/;"	member	line:929	class:barrier_set_t
-m_warp_at_barrier	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   warp_set_t m_warp_at_barrier;$/;"	member	line:930	class:barrier_set_t
-m_shader	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   shader_core_ctx *m_shader;$/;"	member	line:931	class:barrier_set_t
-insn_latency_info	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^struct insn_latency_info {$/;"	struct	line:935
-pc	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   unsigned pc;$/;"	member	line:936	struct:insn_latency_info
-latency	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   unsigned long latency;$/;"	member	line:937	struct:insn_latency_info
-ifetch_buffer_t	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^struct ifetch_buffer_t {$/;"	struct	line:940
-ifetch_buffer_t	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    ifetch_buffer_t() { m_valid=false; }$/;"	function	line:941	struct:ifetch_buffer_t	signature:()
-ifetch_buffer_t	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    ifetch_buffer_t( address_type pc, unsigned nbytes, unsigned warp_id )$/;"	function	line:943	struct:ifetch_buffer_t	signature:( address_type pc, unsigned nbytes, unsigned warp_id )
-m_valid	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    bool m_valid;$/;"	member	line:951	struct:ifetch_buffer_t
-m_pc	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    address_type m_pc;$/;"	member	line:952	struct:ifetch_buffer_t
-m_nbytes	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned m_nbytes;$/;"	member	line:953	struct:ifetch_buffer_t
-m_warp_id	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned m_warp_id;$/;"	member	line:954	struct:ifetch_buffer_t
-simd_function_unit	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^class simd_function_unit {$/;"	class	line:959
-~simd_function_unit	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    ~simd_function_unit() { delete m_dispatch_reg; }$/;"	function	line:962	class:simd_function_unit	signature:()
-issue	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    virtual void issue( register_set& source_reg ) { source_reg.move_out_to(m_dispatch_reg); occupied.set(m_dispatch_reg->latency);}$/;"	function	line:965	class:simd_function_unit	signature:( register_set& source_reg )
-clock_multiplier	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    virtual unsigned clock_multiplier() const { return 1; }$/;"	function	line:970	class:simd_function_unit	signature:() const
-can_issue	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    virtual bool can_issue( const warp_inst_t &inst ) const { return m_dispatch_reg->empty() && !occupied.test(inst.latency); }$/;"	function	line:971	class:simd_function_unit	signature:( const warp_inst_t &inst ) const
-print	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    virtual void print( FILE *fp ) const$/;"	function	line:973	class:simd_function_unit	signature:( FILE *fp ) const
-m_name	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    std::string m_name;$/;"	member	line:979	class:simd_function_unit
-m_config	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    const shader_core_config *m_config;$/;"	member	line:980	class:simd_function_unit
-m_dispatch_reg	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    warp_inst_t *m_dispatch_reg;$/;"	member	line:981	class:simd_function_unit
-MAX_ALU_LATENCY	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    static const unsigned MAX_ALU_LATENCY = 512;$/;"	member	line:982	class:simd_function_unit
-occupied	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    std::bitset<MAX_ALU_LATENCY> occupied;$/;"	member	line:983	class:simd_function_unit
-pipelined_simd_unit	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^class pipelined_simd_unit : public simd_function_unit {$/;"	class	line:986
-get_active_lanes_in_pipeline	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    virtual unsigned get_active_lanes_in_pipeline()$/;"	function	line:993	class:pipelined_simd_unit	signature:()
-stallable	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    virtual bool stallable() const { return false; }$/;"	function	line:1013	class:pipelined_simd_unit	signature:() const
-can_issue	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    virtual bool can_issue( const warp_inst_t &inst ) const$/;"	function	line:1014	class:pipelined_simd_unit	signature:( const warp_inst_t &inst ) const
-print	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    virtual void print(FILE *fp) const$/;"	function	line:1018	class:pipelined_simd_unit	signature:(FILE *fp) const
-m_pipeline_depth	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned m_pipeline_depth;$/;"	member	line:1029	class:pipelined_simd_unit
-m_pipeline_reg	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    warp_inst_t **m_pipeline_reg;$/;"	member	line:1030	class:pipelined_simd_unit
-m_result_port	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    register_set *m_result_port;$/;"	member	line:1031	class:pipelined_simd_unit
-m_core	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    class shader_core_ctx *m_core;$/;"	member	line:1032	class:pipelined_simd_unit	typeref:class:pipelined_simd_unit::shader_core_ctx
-sfu	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^class sfu : public pipelined_simd_unit$/;"	class	line:1035
-can_issue	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    virtual bool can_issue( const warp_inst_t &inst ) const$/;"	function	line:1039	class:sfu	signature:( const warp_inst_t &inst ) const
-sp_unit	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^class sp_unit : public pipelined_simd_unit$/;"	class	line:1052
-can_issue	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    virtual bool can_issue( const warp_inst_t &inst ) const$/;"	function	line:1056	class:sp_unit	signature:( const warp_inst_t &inst ) const
-ldst_unit	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^class ldst_unit: public pipelined_simd_unit {$/;"	class	line:1076
-can_issue	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    virtual bool can_issue( const warp_inst_t &inst ) const$/;"	function	line:1099	class:ldst_unit	signature:( const warp_inst_t &inst ) const
-stallable	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    virtual bool stallable() const { return true; }$/;"	function	line:1111	class:ldst_unit	signature:() const
-m_memory_config	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   const memory_config *m_memory_config;$/;"	member	line:1159	class:ldst_unit
-m_icnt	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   class mem_fetch_interface *m_icnt;$/;"	member	line:1160	class:ldst_unit	typeref:class:ldst_unit::mem_fetch_interface
-m_mf_allocator	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   shader_core_mem_fetch_allocator *m_mf_allocator;$/;"	member	line:1161	class:ldst_unit
-m_core	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   class shader_core_ctx *m_core;$/;"	member	line:1162	class:ldst_unit	typeref:class:ldst_unit::shader_core_ctx
-m_sid	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   unsigned m_sid;$/;"	member	line:1163	class:ldst_unit
-m_tpc	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   unsigned m_tpc;$/;"	member	line:1164	class:ldst_unit
-m_L1T	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   tex_cache *m_L1T; \/\/ texture cache$/;"	member	line:1166	class:ldst_unit
-m_L1C	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   read_only_cache *m_L1C; \/\/ constant cache$/;"	member	line:1167	class:ldst_unit
-m_L1D	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   l1_cache *m_L1D; \/\/ data cache$/;"	member	line:1168	class:ldst_unit
-m_pending_writes	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   std::map<unsigned\/*warp_id*\/, std::map<unsigned\/*regnum*\/,unsigned\/*count*\/> > m_pending_writes;$/;"	member	line:1169	class:ldst_unit
-m_response_fifo	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   std::list<mem_fetch*> m_response_fifo;$/;"	member	line:1170	class:ldst_unit
-m_operand_collector	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   opndcoll_rfu_t *m_operand_collector;$/;"	member	line:1171	class:ldst_unit
-m_scoreboard	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   Scoreboard *m_scoreboard;$/;"	member	line:1172	class:ldst_unit
-m_next_global	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   mem_fetch *m_next_global;$/;"	member	line:1174	class:ldst_unit
-m_next_wb	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   warp_inst_t m_next_wb;$/;"	member	line:1175	class:ldst_unit
-m_writeback_arb	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   unsigned m_writeback_arb; \/\/ round-robin arbiter for writeback contention between L1T, L1C, shared$/;"	member	line:1176	class:ldst_unit
-m_num_writeback_clients	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   unsigned m_num_writeback_clients;$/;"	member	line:1177	class:ldst_unit
-m_mem_rc	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   enum mem_stage_stall_type m_mem_rc;$/;"	member	line:1179	class:ldst_unit	typeref:enum:ldst_unit::mem_stage_stall_type
-m_stats	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   shader_core_stats *m_stats;$/;"	member	line:1181	class:ldst_unit
-m_last_inst_gpu_sim_cycle	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   unsigned long long m_last_inst_gpu_sim_cycle;$/;"	member	line:1184	class:ldst_unit
-m_last_inst_gpu_tot_sim_cycle	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^   unsigned long long m_last_inst_gpu_tot_sim_cycle;$/;"	member	line:1185	class:ldst_unit
-pipeline_stage_name_t	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^enum pipeline_stage_name_t {$/;"	enum	line:1188
-ID_OC_SP	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    ID_OC_SP=0,$/;"	enumerator	line:1189	enum:pipeline_stage_name_t
-ID_OC_SFU	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    ID_OC_SFU,$/;"	enumerator	line:1190	enum:pipeline_stage_name_t
-ID_OC_MEM	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    ID_OC_MEM,$/;"	enumerator	line:1191	enum:pipeline_stage_name_t
-OC_EX_SP	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    OC_EX_SP,$/;"	enumerator	line:1192	enum:pipeline_stage_name_t
-OC_EX_SFU	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    OC_EX_SFU,$/;"	enumerator	line:1193	enum:pipeline_stage_name_t
-OC_EX_MEM	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    OC_EX_MEM,$/;"	enumerator	line:1194	enum:pipeline_stage_name_t
-EX_WB	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    EX_WB,$/;"	enumerator	line:1195	enum:pipeline_stage_name_t
-N_PIPELINE_STAGES	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    N_PIPELINE_STAGES$/;"	enumerator	line:1196	enum:pipeline_stage_name_t
-pipeline_stage_name_decode	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^const char* const pipeline_stage_name_decode[] = {$/;"	variable	line:1199
-shader_core_config	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^struct shader_core_config : public core_config$/;"	struct	line:1210
-shader_core_config	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    shader_core_config(){$/;"	function	line:1212	struct:shader_core_config	signature:()
-init	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    void init()$/;"	function	line:1216	struct:shader_core_config	signature:()
-num_shader	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned num_shader() const { return n_simt_clusters*n_simt_cores_per_cluster; }$/;"	function	line:1258	struct:shader_core_config	signature:() const
-sid_to_cluster	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned sid_to_cluster( unsigned sid ) const { return sid \/ n_simt_cores_per_cluster; }$/;"	function	line:1259	struct:shader_core_config	signature:( unsigned sid ) const
-sid_to_cid	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned sid_to_cid( unsigned sid )     const { return sid % n_simt_cores_per_cluster; }$/;"	function	line:1260	struct:shader_core_config	signature:( unsigned sid ) const
-cid_to_sid	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned cid_to_sid( unsigned cid, unsigned cluster_id ) const { return cluster_id*n_simt_cores_per_cluster + cid; }$/;"	function	line:1261	struct:shader_core_config	signature:( unsigned cid, unsigned cluster_id ) const
-gpgpu_shader_core_pipeline_opt	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    char *gpgpu_shader_core_pipeline_opt;$/;"	member	line:1264	struct:shader_core_config
-gpgpu_perfect_mem	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    bool gpgpu_perfect_mem;$/;"	member	line:1265	struct:shader_core_config
-gpgpu_clock_gated_reg_file	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    bool gpgpu_clock_gated_reg_file;$/;"	member	line:1266	struct:shader_core_config
-gpgpu_clock_gated_lanes	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    bool gpgpu_clock_gated_lanes;$/;"	member	line:1267	struct:shader_core_config
-model	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    enum divergence_support_t model;$/;"	member	line:1268	struct:shader_core_config	typeref:enum:shader_core_config::divergence_support_t
-n_thread_per_shader	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned n_thread_per_shader;$/;"	member	line:1269	struct:shader_core_config
-n_regfile_gating_group	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned n_regfile_gating_group;$/;"	member	line:1270	struct:shader_core_config
-max_warps_per_shader	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned max_warps_per_shader;$/;"	member	line:1271	struct:shader_core_config
-max_cta_per_core	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned max_cta_per_core; \/\/Limit on number of concurrent CTAs in shader core$/;"	member	line:1272	struct:shader_core_config
-max_barriers_per_cta	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned max_barriers_per_cta;$/;"	member	line:1273	struct:shader_core_config
-gpgpu_scheduler_string	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    char * gpgpu_scheduler_string;$/;"	member	line:1274	struct:shader_core_config
-pipeline_widths_string	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    char* pipeline_widths_string;$/;"	member	line:1276	struct:shader_core_config
-pipe_widths	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    int pipe_widths[N_PIPELINE_STAGES];$/;"	member	line:1277	struct:shader_core_config
-m_L1I_config	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    mutable cache_config m_L1I_config;$/;"	member	line:1279	struct:shader_core_config
-m_L1T_config	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    mutable cache_config m_L1T_config;$/;"	member	line:1280	struct:shader_core_config
-m_L1C_config	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    mutable cache_config m_L1C_config;$/;"	member	line:1281	struct:shader_core_config
-m_L1D_config	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    mutable l1d_cache_config m_L1D_config;$/;"	member	line:1282	struct:shader_core_config
-gmem_skip_L1D	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    bool gmem_skip_L1D; \/\/ on = global memory access always skip the L1 cache$/;"	member	line:1284	struct:shader_core_config
-gpgpu_dwf_reg_bankconflict	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    bool gpgpu_dwf_reg_bankconflict;$/;"	member	line:1286	struct:shader_core_config
-gpgpu_num_sched_per_core	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    int gpgpu_num_sched_per_core;$/;"	member	line:1288	struct:shader_core_config
-gpgpu_max_insn_issue_per_warp	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    int gpgpu_max_insn_issue_per_warp;$/;"	member	line:1289	struct:shader_core_config
-gpgpu_operand_collector_num_units_sp	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    int gpgpu_operand_collector_num_units_sp;$/;"	member	line:1292	struct:shader_core_config
-gpgpu_operand_collector_num_units_sfu	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    int gpgpu_operand_collector_num_units_sfu;$/;"	member	line:1293	struct:shader_core_config
-gpgpu_operand_collector_num_units_mem	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    int gpgpu_operand_collector_num_units_mem;$/;"	member	line:1294	struct:shader_core_config
-gpgpu_operand_collector_num_units_gen	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    int gpgpu_operand_collector_num_units_gen;$/;"	member	line:1295	struct:shader_core_config
-gpgpu_operand_collector_num_in_ports_sp	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned int gpgpu_operand_collector_num_in_ports_sp;$/;"	member	line:1297	struct:shader_core_config
-gpgpu_operand_collector_num_in_ports_sfu	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned int gpgpu_operand_collector_num_in_ports_sfu;$/;"	member	line:1298	struct:shader_core_config
-gpgpu_operand_collector_num_in_ports_mem	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned int gpgpu_operand_collector_num_in_ports_mem;$/;"	member	line:1299	struct:shader_core_config
-gpgpu_operand_collector_num_in_ports_gen	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned int gpgpu_operand_collector_num_in_ports_gen;$/;"	member	line:1300	struct:shader_core_config
-gpgpu_operand_collector_num_out_ports_sp	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned int gpgpu_operand_collector_num_out_ports_sp;$/;"	member	line:1302	struct:shader_core_config
-gpgpu_operand_collector_num_out_ports_sfu	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned int gpgpu_operand_collector_num_out_ports_sfu;$/;"	member	line:1303	struct:shader_core_config
-gpgpu_operand_collector_num_out_ports_mem	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned int gpgpu_operand_collector_num_out_ports_mem;$/;"	member	line:1304	struct:shader_core_config
-gpgpu_operand_collector_num_out_ports_gen	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned int gpgpu_operand_collector_num_out_ports_gen;$/;"	member	line:1305	struct:shader_core_config
-gpgpu_num_sp_units	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    int gpgpu_num_sp_units;$/;"	member	line:1307	struct:shader_core_config
-gpgpu_num_sfu_units	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    int gpgpu_num_sfu_units;$/;"	member	line:1308	struct:shader_core_config
-gpgpu_num_mem_units	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    int gpgpu_num_mem_units;$/;"	member	line:1309	struct:shader_core_config
-gpgpu_shader_registers	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned gpgpu_shader_registers;$/;"	member	line:1312	struct:shader_core_config
-gpgpu_warpdistro_shader	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    int gpgpu_warpdistro_shader;$/;"	member	line:1313	struct:shader_core_config
-gpgpu_warp_issue_shader	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    int gpgpu_warp_issue_shader;$/;"	member	line:1314	struct:shader_core_config
-gpgpu_num_reg_banks	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned gpgpu_num_reg_banks;$/;"	member	line:1315	struct:shader_core_config
-gpgpu_reg_bank_use_warp_id	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    bool gpgpu_reg_bank_use_warp_id;$/;"	member	line:1316	struct:shader_core_config
-gpgpu_local_mem_map	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    bool gpgpu_local_mem_map;$/;"	member	line:1317	struct:shader_core_config
-max_sp_latency	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned max_sp_latency;$/;"	member	line:1319	struct:shader_core_config
-max_sfu_latency	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned max_sfu_latency;$/;"	member	line:1320	struct:shader_core_config
-n_simt_cores_per_cluster	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned n_simt_cores_per_cluster;$/;"	member	line:1322	struct:shader_core_config
-n_simt_clusters	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned n_simt_clusters;$/;"	member	line:1323	struct:shader_core_config
-n_simt_ejection_buffer_size	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned n_simt_ejection_buffer_size;$/;"	member	line:1324	struct:shader_core_config
-ldst_unit_response_queue_size	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned ldst_unit_response_queue_size;$/;"	member	line:1325	struct:shader_core_config
-simt_core_sim_order	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    int simt_core_sim_order;$/;"	member	line:1327	struct:shader_core_config
-mem2device	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned mem2device(unsigned memid) const { return memid + n_simt_clusters; }$/;"	function	line:1329	struct:shader_core_config	signature:(unsigned memid) const
-shader_core_stats_pod	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^struct shader_core_stats_pod {$/;"	struct	line:1332
-shader_core_stats_pod_start	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^	void* shader_core_stats_pod_start[0]; \/\/ DO NOT MOVE FROM THE TOP - spaceless pointer to the start of this structure$/;"	member	line:1334	struct:shader_core_stats_pod
-shader_cycles	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^	unsigned long long *shader_cycles;$/;"	member	line:1335	struct:shader_core_stats_pod
-m_num_sim_insn	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *m_num_sim_insn; \/\/ number of scalar thread instructions committed by this shader core$/;"	member	line:1336	struct:shader_core_stats_pod
-m_num_sim_winsn	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *m_num_sim_winsn; \/\/ number of warp instructions committed by this shader core$/;"	member	line:1337	struct:shader_core_stats_pod
-m_last_num_sim_insn	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^	unsigned *m_last_num_sim_insn;$/;"	member	line:1338	struct:shader_core_stats_pod
-m_last_num_sim_winsn	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^	unsigned *m_last_num_sim_winsn;$/;"	member	line:1339	struct:shader_core_stats_pod
-m_num_decoded_insn	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *m_num_decoded_insn; \/\/ number of instructions decoded by this shader core$/;"	member	line:1340	struct:shader_core_stats_pod
-m_pipeline_duty_cycle	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    float *m_pipeline_duty_cycle;$/;"	member	line:1341	struct:shader_core_stats_pod
-m_num_FPdecoded_insn	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *m_num_FPdecoded_insn;$/;"	member	line:1342	struct:shader_core_stats_pod
-m_num_INTdecoded_insn	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *m_num_INTdecoded_insn;$/;"	member	line:1343	struct:shader_core_stats_pod
-m_num_storequeued_insn	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *m_num_storequeued_insn;$/;"	member	line:1344	struct:shader_core_stats_pod
-m_num_loadqueued_insn	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *m_num_loadqueued_insn;$/;"	member	line:1345	struct:shader_core_stats_pod
-m_num_ialu_acesses	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *m_num_ialu_acesses;$/;"	member	line:1346	struct:shader_core_stats_pod
-m_num_fp_acesses	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *m_num_fp_acesses;$/;"	member	line:1347	struct:shader_core_stats_pod
-m_num_imul_acesses	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *m_num_imul_acesses;$/;"	member	line:1348	struct:shader_core_stats_pod
-m_num_tex_inst	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *m_num_tex_inst;$/;"	member	line:1349	struct:shader_core_stats_pod
-m_num_fpmul_acesses	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *m_num_fpmul_acesses;$/;"	member	line:1350	struct:shader_core_stats_pod
-m_num_idiv_acesses	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *m_num_idiv_acesses;$/;"	member	line:1351	struct:shader_core_stats_pod
-m_num_fpdiv_acesses	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *m_num_fpdiv_acesses;$/;"	member	line:1352	struct:shader_core_stats_pod
-m_num_sp_acesses	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *m_num_sp_acesses;$/;"	member	line:1353	struct:shader_core_stats_pod
-m_num_sfu_acesses	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *m_num_sfu_acesses;$/;"	member	line:1354	struct:shader_core_stats_pod
-m_num_trans_acesses	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *m_num_trans_acesses;$/;"	member	line:1355	struct:shader_core_stats_pod
-m_num_mem_acesses	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *m_num_mem_acesses;$/;"	member	line:1356	struct:shader_core_stats_pod
-m_num_sp_committed	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *m_num_sp_committed;$/;"	member	line:1357	struct:shader_core_stats_pod
-m_num_tlb_hits	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *m_num_tlb_hits;$/;"	member	line:1358	struct:shader_core_stats_pod
-m_num_tlb_accesses	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *m_num_tlb_accesses;$/;"	member	line:1359	struct:shader_core_stats_pod
-m_num_sfu_committed	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *m_num_sfu_committed;$/;"	member	line:1360	struct:shader_core_stats_pod
-m_num_mem_committed	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *m_num_mem_committed;$/;"	member	line:1361	struct:shader_core_stats_pod
-m_read_regfile_acesses	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *m_read_regfile_acesses;$/;"	member	line:1362	struct:shader_core_stats_pod
-m_write_regfile_acesses	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *m_write_regfile_acesses;$/;"	member	line:1363	struct:shader_core_stats_pod
-m_non_rf_operands	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *m_non_rf_operands;$/;"	member	line:1364	struct:shader_core_stats_pod
-m_num_imul24_acesses	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *m_num_imul24_acesses;$/;"	member	line:1365	struct:shader_core_stats_pod
-m_num_imul32_acesses	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *m_num_imul32_acesses;$/;"	member	line:1366	struct:shader_core_stats_pod
-m_active_sp_lanes	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *m_active_sp_lanes;$/;"	member	line:1367	struct:shader_core_stats_pod
-m_active_sfu_lanes	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *m_active_sfu_lanes;$/;"	member	line:1368	struct:shader_core_stats_pod
-m_active_fu_lanes	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *m_active_fu_lanes;$/;"	member	line:1369	struct:shader_core_stats_pod
-m_active_fu_mem_lanes	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *m_active_fu_mem_lanes;$/;"	member	line:1370	struct:shader_core_stats_pod
-m_n_diverge	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *m_n_diverge;    \/\/ number of divergence occurring in this shader$/;"	member	line:1371	struct:shader_core_stats_pod
-gpgpu_n_load_insn	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned gpgpu_n_load_insn;$/;"	member	line:1372	struct:shader_core_stats_pod
-gpgpu_n_store_insn	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned gpgpu_n_store_insn;$/;"	member	line:1373	struct:shader_core_stats_pod
-gpgpu_n_shmem_insn	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned gpgpu_n_shmem_insn;$/;"	member	line:1374	struct:shader_core_stats_pod
-gpgpu_n_tex_insn	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned gpgpu_n_tex_insn;$/;"	member	line:1375	struct:shader_core_stats_pod
-gpgpu_n_const_insn	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned gpgpu_n_const_insn;$/;"	member	line:1376	struct:shader_core_stats_pod
-gpgpu_n_param_insn	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned gpgpu_n_param_insn;$/;"	member	line:1377	struct:shader_core_stats_pod
-gpgpu_n_shmem_bkconflict	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned gpgpu_n_shmem_bkconflict;$/;"	member	line:1378	struct:shader_core_stats_pod
-gpgpu_n_cache_bkconflict	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned gpgpu_n_cache_bkconflict;$/;"	member	line:1379	struct:shader_core_stats_pod
-gpgpu_n_intrawarp_mshr_merge	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    int      gpgpu_n_intrawarp_mshr_merge;$/;"	member	line:1380	struct:shader_core_stats_pod
-gpgpu_n_cmem_portconflict	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned gpgpu_n_cmem_portconflict;$/;"	member	line:1381	struct:shader_core_stats_pod
-gpu_stall_shd_mem_breakdown	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned gpu_stall_shd_mem_breakdown[N_MEM_STAGE_ACCESS_TYPE][N_MEM_STAGE_STALL_TYPE];$/;"	member	line:1382	struct:shader_core_stats_pod
-gpu_reg_bank_conflict_stalls	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned gpu_reg_bank_conflict_stalls;$/;"	member	line:1383	struct:shader_core_stats_pod
-shader_cycle_distro	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *shader_cycle_distro;$/;"	member	line:1384	struct:shader_core_stats_pod
-last_shader_cycle_distro	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *last_shader_cycle_distro;$/;"	member	line:1385	struct:shader_core_stats_pod
-num_warps_issuable	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *num_warps_issuable;$/;"	member	line:1386	struct:shader_core_stats_pod
-gpgpu_n_stall_shd_mem	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned gpgpu_n_stall_shd_mem;$/;"	member	line:1387	struct:shader_core_stats_pod
-gpgpu_n_mem_read_local	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    int gpgpu_n_mem_read_local;$/;"	member	line:1390	struct:shader_core_stats_pod
-gpgpu_n_mem_write_local	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    int gpgpu_n_mem_write_local;$/;"	member	line:1391	struct:shader_core_stats_pod
-gpgpu_n_mem_texture	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    int gpgpu_n_mem_texture;$/;"	member	line:1392	struct:shader_core_stats_pod
-gpgpu_n_mem_const	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    int gpgpu_n_mem_const;$/;"	member	line:1393	struct:shader_core_stats_pod
-gpgpu_n_mem_read_global	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    int gpgpu_n_mem_read_global;$/;"	member	line:1394	struct:shader_core_stats_pod
-gpgpu_n_mem_write_global	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    int gpgpu_n_mem_write_global;$/;"	member	line:1395	struct:shader_core_stats_pod
-gpgpu_n_mem_read_inst	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    int gpgpu_n_mem_read_inst;$/;"	member	line:1396	struct:shader_core_stats_pod
-gpgpu_n_mem_l2_writeback	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    int gpgpu_n_mem_l2_writeback;$/;"	member	line:1398	struct:shader_core_stats_pod
-gpgpu_n_mem_l1_write_allocate	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    int gpgpu_n_mem_l1_write_allocate;$/;"	member	line:1399	struct:shader_core_stats_pod
-gpgpu_n_mem_l2_write_allocate	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    int gpgpu_n_mem_l2_write_allocate;$/;"	member	line:1400	struct:shader_core_stats_pod
-made_write_mfs	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned made_write_mfs;$/;"	member	line:1402	struct:shader_core_stats_pod
-made_read_mfs	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned made_read_mfs;$/;"	member	line:1403	struct:shader_core_stats_pod
-gpgpu_n_shmem_bank_access	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned *gpgpu_n_shmem_bank_access;$/;"	member	line:1405	struct:shader_core_stats_pod
-n_simt_to_mem	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    long *n_simt_to_mem; \/\/ Interconnect power stats$/;"	member	line:1406	struct:shader_core_stats_pod
-n_mem_to_simt	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    long *n_mem_to_simt;$/;"	member	line:1407	struct:shader_core_stats_pod
-total_mem_op_gaps	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned total_mem_op_gaps;$/;"	member	line:1410	struct:shader_core_stats_pod
-total_issued_mem_ops	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned total_issued_mem_ops;$/;"	member	line:1411	struct:shader_core_stats_pod
-shader_core_stats	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^class shader_core_stats : public shader_core_stats_pod {$/;"	class	line:1415
-shader_core_stats	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    shader_core_stats( const shader_core_config *config )$/;"	function	line:1417	class:shader_core_stats	signature:( const shader_core_config *config )
-~shader_core_stats	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    ~shader_core_stats()$/;"	function	line:1477	class:shader_core_stats	signature:()
-new_grid	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    void new_grid()$/;"	function	line:1488	class:shader_core_stats	signature:()
-get_dynamic_warp_issue	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    const std::vector< std::vector<unsigned> >& get_dynamic_warp_issue() const$/;"	function	line:1498	class:shader_core_stats	signature:() const
-get_warp_slot_issue	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    const std::vector< std::vector<unsigned> >& get_warp_slot_issue() const$/;"	function	line:1503	class:shader_core_stats	signature:() const
-m_config	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    const shader_core_config *m_config;$/;"	member	line:1509	class:shader_core_stats
-m_outgoing_traffic_stats	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    traffic_breakdown *m_outgoing_traffic_stats; \/\/ core to memory partitions$/;"	member	line:1511	class:shader_core_stats
-m_incoming_traffic_stats	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    traffic_breakdown *m_incoming_traffic_stats; \/\/ memory partition to core$/;"	member	line:1512	class:shader_core_stats
-m_shader_dynamic_warp_issue_distro	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    std::vector< std::vector<unsigned> > m_shader_dynamic_warp_issue_distro;$/;"	member	line:1515	class:shader_core_stats
-m_last_shader_dynamic_warp_issue_distro	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    std::vector<unsigned> m_last_shader_dynamic_warp_issue_distro;$/;"	member	line:1516	class:shader_core_stats
-m_shader_warp_slot_issue_distro	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    std::vector< std::vector<unsigned> > m_shader_warp_slot_issue_distro;$/;"	member	line:1517	class:shader_core_stats
-m_last_shader_warp_slot_issue_distro	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    std::vector<unsigned> m_last_shader_warp_slot_issue_distro;$/;"	member	line:1518	class:shader_core_stats
-shader_core_mem_fetch_allocator	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^class shader_core_mem_fetch_allocator : public mem_fetch_allocator {$/;"	class	line:1529
-shader_core_mem_fetch_allocator	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    shader_core_mem_fetch_allocator( unsigned core_id, unsigned cluster_id, const memory_config *config )$/;"	function	line:1531	class:shader_core_mem_fetch_allocator	signature:( unsigned core_id, unsigned cluster_id, const memory_config *config )
-alloc	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    mem_fetch *alloc( new_addr_type addr, mem_access_type type, unsigned size, bool wr ) const$/;"	function	line:1537	class:shader_core_mem_fetch_allocator	signature:( new_addr_type addr, mem_access_type type, unsigned size, bool wr ) const
-alloc	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    mem_fetch *alloc( const warp_inst_t &inst, const mem_access_t &access ) const$/;"	function	line:1550	class:shader_core_mem_fetch_allocator	signature:( const warp_inst_t &inst, const mem_access_t &access ) const
-m_core_id	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned m_core_id;$/;"	member	line:1564	class:shader_core_mem_fetch_allocator
-m_cluster_id	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned m_cluster_id;$/;"	member	line:1565	class:shader_core_mem_fetch_allocator
-m_memory_config	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    const memory_config *m_memory_config;$/;"	member	line:1566	class:shader_core_mem_fetch_allocator
-shader_core_ctx	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^class shader_core_ctx : public core_t {$/;"	class	line:1569
-set_kernel	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    void set_kernel( kernel_info_t *k )$/;"	function	line:1589	class:shader_core_ctx	signature:( kernel_info_t *k )
-get_not_completed	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned get_not_completed() const { return m_not_completed; }$/;"	function	line:1601	class:shader_core_ctx	signature:() const
-get_n_active_cta	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned get_n_active_cta() const { return m_n_active_cta; }$/;"	function	line:1602	class:shader_core_ctx	signature:() const
-isactive	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned isactive() const {if(m_n_active_cta>0) return 1; else return 0;}$/;"	function	line:1603	class:shader_core_ctx	signature:() const
-get_kernel	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    kernel_info_t *get_kernel() { return m_kernel; }$/;"	function	line:1604	class:shader_core_ctx	signature:()
-get_sid	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned get_sid() const {return m_sid;}$/;"	function	line:1605	class:shader_core_ctx	signature:() const
-inc_store_req	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    void inc_store_req( unsigned warp_id) { m_warp[warp_id].inc_store_req(); }$/;"	function	line:1619	class:shader_core_ctx	signature:( unsigned warp_id)
-dec_inst_in_pipeline	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    void dec_inst_in_pipeline( unsigned warp_id ) { m_warp[warp_id].dec_inst_in_pipeline(); } \/\/ also used in writeback()$/;"	function	line:1620	class:shader_core_ctx	signature:( unsigned warp_id )
-get_config	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    const shader_core_config *get_config() const { return m_config; }$/;"	function	line:1628	class:shader_core_ctx	signature:() const
-incload_stat	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    void incload_stat() {m_stats->m_num_loadqueued_insn[m_sid]++;}$/;"	function	line:1643	class:shader_core_ctx	signature:()
-incstore_stat	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    void incstore_stat() {m_stats->m_num_storequeued_insn[m_sid]++;}$/;"	function	line:1644	class:shader_core_ctx	signature:()
-incialu_stat	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    void incialu_stat(unsigned active_count,double latency) {$/;"	function	line:1645	class:shader_core_ctx	signature:(unsigned active_count,double latency)
-inctex_stat	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    void inctex_stat(unsigned active_count,double latency){$/;"	function	line:1653	class:shader_core_ctx	signature:(unsigned active_count,double latency)
-incimul_stat	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    void incimul_stat(unsigned active_count,double latency) {$/;"	function	line:1656	class:shader_core_ctx	signature:(unsigned active_count,double latency)
-incimul24_stat	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    void incimul24_stat(unsigned active_count,double latency) {$/;"	function	line:1664	class:shader_core_ctx	signature:(unsigned active_count,double latency)
-incimul32_stat	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^	 void incimul32_stat(unsigned active_count,double latency) {$/;"	function	line:1672	class:shader_core_ctx	signature:(unsigned active_count,double latency)
-incidiv_stat	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^	 void incidiv_stat(unsigned active_count,double latency) {$/;"	function	line:1681	class:shader_core_ctx	signature:(unsigned active_count,double latency)
-incfpalu_stat	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^	 void incfpalu_stat(unsigned active_count,double latency) {$/;"	function	line:1689	class:shader_core_ctx	signature:(unsigned active_count,double latency)
-incfpmul_stat	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^	 void incfpmul_stat(unsigned active_count,double latency) {$/;"	function	line:1697	class:shader_core_ctx	signature:(unsigned active_count,double latency)
-incfpdiv_stat	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^	 void incfpdiv_stat(unsigned active_count,double latency) {$/;"	function	line:1706	class:shader_core_ctx	signature:(unsigned active_count,double latency)
-inctrans_stat	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^	 void inctrans_stat(unsigned active_count,double latency) {$/;"	function	line:1714	class:shader_core_ctx	signature:(unsigned active_count,double latency)
-incsfu_stat	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^	 void incsfu_stat(unsigned active_count,double latency) {m_stats->m_num_sfu_acesses[m_sid]=m_stats->m_num_sfu_acesses[m_sid]+active_count*latency;}$/;"	function	line:1723	class:shader_core_ctx	signature:(unsigned active_count,double latency)
-incsp_stat	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^	 void incsp_stat(unsigned active_count,double latency) {m_stats->m_num_sp_acesses[m_sid]=m_stats->m_num_sp_acesses[m_sid]+active_count*latency;}$/;"	function	line:1724	class:shader_core_ctx	signature:(unsigned active_count,double latency)
-incmem_stat	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^	 void incmem_stat(unsigned active_count,double latency) {$/;"	function	line:1725	class:shader_core_ctx	signature:(unsigned active_count,double latency)
-incregfile_reads	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^	 void incregfile_reads(unsigned active_count) {m_stats->m_read_regfile_acesses[m_sid]=m_stats->m_read_regfile_acesses[m_sid]+active_count;}$/;"	function	line:1735	class:shader_core_ctx	signature:(unsigned active_count)
-incregfile_writes	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^	 void incregfile_writes(unsigned active_count){m_stats->m_write_regfile_acesses[m_sid]=m_stats->m_write_regfile_acesses[m_sid]+active_count;}$/;"	function	line:1736	class:shader_core_ctx	signature:(unsigned active_count)
-incnon_rf_operands	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^	 void incnon_rf_operands(unsigned active_count){m_stats->m_non_rf_operands[m_sid]=m_stats->m_non_rf_operands[m_sid]+active_count;}$/;"	function	line:1737	class:shader_core_ctx	signature:(unsigned active_count)
-incspactivelanes_stat	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^	 void incspactivelanes_stat(unsigned active_count) {m_stats->m_active_sp_lanes[m_sid]=m_stats->m_active_sp_lanes[m_sid]+active_count;}$/;"	function	line:1739	class:shader_core_ctx	signature:(unsigned active_count)
-incsfuactivelanes_stat	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^	 void incsfuactivelanes_stat(unsigned active_count) {m_stats->m_active_sfu_lanes[m_sid]=m_stats->m_active_sfu_lanes[m_sid]+active_count;}$/;"	function	line:1740	class:shader_core_ctx	signature:(unsigned active_count)
-incfuactivelanes_stat	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^	 void incfuactivelanes_stat(unsigned active_count) {m_stats->m_active_fu_lanes[m_sid]=m_stats->m_active_fu_lanes[m_sid]+active_count;}$/;"	function	line:1741	class:shader_core_ctx	signature:(unsigned active_count)
-incfumemactivelanes_stat	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^	 void incfumemactivelanes_stat(unsigned active_count) {m_stats->m_active_fu_mem_lanes[m_sid]=m_stats->m_active_fu_mem_lanes[m_sid]+active_count;}$/;"	function	line:1742	class:shader_core_ctx	signature:(unsigned active_count)
-inc_simt_to_mem	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^	 void inc_simt_to_mem(unsigned n_flits){ m_stats->n_simt_to_mem[m_sid] += n_flits; }$/;"	function	line:1744	class:shader_core_ctx	signature:(unsigned n_flits)
-inactive_lanes_accesses_sfu	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^	 unsigned inactive_lanes_accesses_sfu(unsigned active_count,double latency){$/;"	function	line:1748	class:shader_core_ctx	signature:(unsigned active_count,double latency)
-inactive_lanes_accesses_nonsfu	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^	 unsigned inactive_lanes_accesses_nonsfu(unsigned active_count,double latency){$/;"	function	line:1751	class:shader_core_ctx	signature:(unsigned active_count,double latency)
-m_last_inst_gpu_sim_cycle	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned long long m_last_inst_gpu_sim_cycle;$/;"	member	line:1783	class:shader_core_ctx
-m_last_inst_gpu_tot_sim_cycle	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned long long m_last_inst_gpu_tot_sim_cycle;$/;"	member	line:1784	class:shader_core_ctx
-m_sid	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned m_sid; \/\/ shader id$/;"	member	line:1787	class:shader_core_ctx
-m_tpc	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned m_tpc; \/\/ texture processor cluster id (aka, node id when using interconnect concentration)$/;"	member	line:1788	class:shader_core_ctx
-m_config	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    const shader_core_config *m_config;$/;"	member	line:1789	class:shader_core_ctx
-m_memory_config	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    const memory_config *m_memory_config;$/;"	member	line:1790	class:shader_core_ctx
-m_cluster	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    class simt_core_cluster *m_cluster;$/;"	member	line:1791	class:shader_core_ctx	typeref:class:shader_core_ctx::simt_core_cluster
-m_stats	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    shader_core_stats *m_stats;$/;"	member	line:1794	class:shader_core_ctx
-m_n_active_cta	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned m_n_active_cta; \/\/ number of Cooperative Thread Arrays (blocks) currently running on this shader.$/;"	member	line:1797	class:shader_core_ctx
-m_cta_status	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned m_cta_status[MAX_CTA_PER_SHADER]; \/\/ CTAs status$/;"	member	line:1798	class:shader_core_ctx
-m_not_completed	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned m_not_completed; \/\/ number of threads to be completed (==0 when all thread on this core completed)$/;"	member	line:1799	class:shader_core_ctx
-m_active_threads	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    std::bitset<MAX_THREAD_PER_SM> m_active_threads;$/;"	member	line:1800	class:shader_core_ctx
-m_threadState	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    thread_ctx_t             *m_threadState;$/;"	member	line:1803	class:shader_core_ctx
-m_icnt	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    mem_fetch_interface *m_icnt;$/;"	member	line:1806	class:shader_core_ctx
-m_mem_fetch_allocator	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    shader_core_mem_fetch_allocator *m_mem_fetch_allocator;$/;"	member	line:1807	class:shader_core_ctx
-m_L1I	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    read_only_cache *m_L1I; \/\/ instruction cache$/;"	member	line:1810	class:shader_core_ctx
-m_last_warp_fetched	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    int  m_last_warp_fetched;$/;"	member	line:1811	class:shader_core_ctx
-m_warp	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    std::vector<shd_warp_t>   m_warp;   \/\/ per warp information array$/;"	member	line:1814	class:shader_core_ctx
-m_barriers	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    barrier_set_t             m_barriers;$/;"	member	line:1815	class:shader_core_ctx
-m_inst_fetch_buffer	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    ifetch_buffer_t           m_inst_fetch_buffer;$/;"	member	line:1816	class:shader_core_ctx
-m_pipeline_reg	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    std::vector<register_set> m_pipeline_reg;$/;"	member	line:1817	class:shader_core_ctx
-m_scoreboard	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    Scoreboard               *m_scoreboard;$/;"	member	line:1818	class:shader_core_ctx
-m_operand_collector	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    opndcoll_rfu_t            m_operand_collector;$/;"	member	line:1819	class:shader_core_ctx
-schedulers	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    std::vector<scheduler_unit*>  schedulers;$/;"	member	line:1822	class:shader_core_ctx
-m_num_function_units	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned m_num_function_units;$/;"	member	line:1825	class:shader_core_ctx
-m_dispatch_port	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    std::vector<pipeline_stage_name_t> m_dispatch_port;$/;"	member	line:1826	class:shader_core_ctx
-m_issue_port	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    std::vector<pipeline_stage_name_t> m_issue_port;$/;"	member	line:1827	class:shader_core_ctx
-m_fu	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    std::vector<simd_function_unit*> m_fu; \/\/ stallable pipelines should be last in this array$/;"	member	line:1828	class:shader_core_ctx
-m_ldst_unit	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    ldst_unit *m_ldst_unit;$/;"	member	line:1829	class:shader_core_ctx
-MAX_ALU_LATENCY	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    static const unsigned MAX_ALU_LATENCY = 512;$/;"	member	line:1830	class:shader_core_ctx
-num_result_bus	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned num_result_bus;$/;"	member	line:1831	class:shader_core_ctx
-m_result_bus	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    std::vector< std::bitset<MAX_ALU_LATENCY>* > m_result_bus;$/;"	member	line:1832	class:shader_core_ctx
-kernel_max_cta_per_shader	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned kernel_max_cta_per_shader;$/;"	member	line:1835	class:shader_core_ctx
-kernel_padded_threads_per_cta	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned kernel_padded_threads_per_cta;$/;"	member	line:1836	class:shader_core_ctx
-m_dynamic_warp_id	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned m_dynamic_warp_id;$/;"	member	line:1841	class:shader_core_ctx
-simt_core_cluster	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^class simt_core_cluster {$/;"	class	line:1844
-response_queue_full	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    bool response_queue_full() {$/;"	function	line:1863	class:simt_core_cluster	signature:()
-push_response_fifo	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    void push_response_fifo(class mem_fetch *mf) {$/;"	function	line:1866	class:simt_core_cluster	signature:(class mem_fetch *mf)
-get_gpu	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    gpgpu_sim *get_gpu() { return m_gpu; }$/;"	function	line:1876	class:simt_core_cluster	signature:()
-m_cluster_id	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned m_cluster_id;$/;"	member	line:1890	class:simt_core_cluster
-m_gpu	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    gpgpu_sim *m_gpu;$/;"	member	line:1891	class:simt_core_cluster
-m_config	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    const shader_core_config *m_config;$/;"	member	line:1892	class:simt_core_cluster
-m_stats	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    shader_core_stats *m_stats;$/;"	member	line:1893	class:simt_core_cluster
-m_memory_stats	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    memory_stats_t *m_memory_stats;$/;"	member	line:1894	class:simt_core_cluster
-m_core	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    shader_core_ctx **m_core;$/;"	member	line:1895	class:simt_core_cluster
-m_cta_issue_next_core	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    unsigned m_cta_issue_next_core;$/;"	member	line:1897	class:simt_core_cluster
-m_core_sim_order	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    std::list<unsigned> m_core_sim_order;$/;"	member	line:1898	class:simt_core_cluster
-m_response_fifo	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    std::list<mem_fetch*> m_response_fifo;$/;"	member	line:1899	class:simt_core_cluster
-shader_memory_interface	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^class shader_memory_interface : public mem_fetch_interface {$/;"	class	line:1902
-shader_memory_interface	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    shader_memory_interface( shader_core_ctx *core, simt_core_cluster *cluster ) { m_core=core; m_cluster=cluster; }$/;"	function	line:1904	class:shader_memory_interface	signature:( shader_core_ctx *core, simt_core_cluster *cluster )
-full	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    virtual bool full( unsigned size, bool write ) const$/;"	function	line:1905	class:shader_memory_interface	signature:( unsigned size, bool write ) const
-push	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    virtual void push(mem_fetch *mf)$/;"	function	line:1909	class:shader_memory_interface	signature:(mem_fetch *mf)
-m_core	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    shader_core_ctx *m_core;$/;"	member	line:1915	class:shader_memory_interface
-m_cluster	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    simt_core_cluster *m_cluster;$/;"	member	line:1916	class:shader_memory_interface
-perfect_memory_interface	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^class perfect_memory_interface : public mem_fetch_interface {$/;"	class	line:1919
-perfect_memory_interface	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    perfect_memory_interface( shader_core_ctx *core, simt_core_cluster *cluster ) { m_core=core; m_cluster=cluster; }$/;"	function	line:1921	class:perfect_memory_interface	signature:( shader_core_ctx *core, simt_core_cluster *cluster )
-full	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    virtual bool full( unsigned size, bool write) const$/;"	function	line:1922	class:perfect_memory_interface	signature:( unsigned size, bool write) const
-push	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    virtual void push(mem_fetch *mf)$/;"	function	line:1926	class:perfect_memory_interface	signature:(mem_fetch *mf)
-m_core	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    shader_core_ctx *m_core;$/;"	member	line:1934	class:perfect_memory_interface
-m_cluster	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^    simt_core_cluster *m_cluster;$/;"	member	line:1935	class:perfect_memory_interface
-get_sid	/home/ryan/gpu/src/gpgpu-sim/shader.h	/^inline int scheduler_unit::get_sid() const { return m_shader->get_sid(); }$/;"	function	line:1939	class:scheduler_unit	signature:() const
+PRIORITIZE_MSHR_OVER_WB	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^#define PRIORITIZE_MSHR_OVER_WB /;"	macro	line:50	file:
+MAX	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^#define MAX(/;"	macro	line:51	file:
+MIN	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^#define MIN(/;"	macro	line:52	file:
+get_regs_written	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^std::list<unsigned> shader_core_ctx::get_regs_written( const inst_t &fvt ) const$/;"	function	line:57	class:shader_core_ctx	signature:( const inst_t &fvt ) const
+shader_core_ctx	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^shader_core_ctx::shader_core_ctx( class gpgpu_sim *gpu,$/;"	function	line:68	class:shader_core_ctx	signature:( class gpgpu_sim *gpu, class simt_core_cluster *cluster, unsigned shader_id, unsigned tpc_id, const struct shader_core_config *config, const struct memory_config *mem_config, shader_core_stats *stats )
+STRSIZE	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^    #define STRSIZE /;"	macro	line:117	file:
+reinit	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_ctx::reinit(unsigned start_thread, unsigned end_thread, bool reset_not_completed )$/;"	function	line:301	class:shader_core_ctx	signature:(unsigned start_thread, unsigned end_thread, bool reset_not_completed )
+init_warps	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_ctx::init_warps( unsigned cta_id, unsigned start_thread, unsigned end_thread )$/;"	function	line:317	class:shader_core_ctx	signature:( unsigned cta_id, unsigned start_thread, unsigned end_thread )
+next_pc	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^address_type shader_core_ctx::next_pc( int tid ) const$/;"	function	line:344	class:shader_core_ctx	signature:( int tid ) const
+get_pdom_stack_top_info	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void gpgpu_sim::get_pdom_stack_top_info( unsigned sid, unsigned tid, unsigned *pc, unsigned *rpc )$/;"	function	line:354	class:gpgpu_sim	signature:( unsigned sid, unsigned tid, unsigned *pc, unsigned *rpc )
+get_pdom_stack_top_info	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_ctx::get_pdom_stack_top_info( unsigned tid, unsigned *pc, unsigned *rpc ) const$/;"	function	line:360	class:shader_core_ctx	signature:( unsigned tid, unsigned *pc, unsigned *rpc ) const
+print	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_stats::print( FILE* fout ) const$/;"	function	line:366	class:shader_core_stats	signature:( FILE* fout ) const
+event_warp_issued	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_stats::event_warp_issued( unsigned s_id, unsigned warp_id, unsigned num_issued, unsigned dynamic_warp_id ) {$/;"	function	line:456	class:shader_core_stats	signature:( unsigned s_id, unsigned warp_id, unsigned num_issued, unsigned dynamic_warp_id )
+visualizer_print	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_stats::visualizer_print( gzFile visualizer_file )$/;"	function	line:470	class:shader_core_stats	signature:( gzFile visualizer_file )
+DYNAMIC_WARP_PRINT_RESOLUTION	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^    #define DYNAMIC_WARP_PRINT_RESOLUTION /;"	macro	line:511	file:
+PROGRAM_MEM_START	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^#define PROGRAM_MEM_START /;"	macro	line:562	file:
+decode	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_ctx::decode()$/;"	function	line:565	class:shader_core_ctx	signature:()
+fetch	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_ctx::fetch()$/;"	function	line:596	class:shader_core_ctx	signature:()
+func_exec_inst	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_ctx::func_exec_inst( warp_inst_t &inst )$/;"	function	line:672	class:shader_core_ctx	signature:( warp_inst_t &inst )
+issue_warp	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_ctx::issue_warp( register_set& pipe_reg_set, const warp_inst_t* next_inst, const active_mask_t &active_mask, unsigned warp_id )$/;"	function	line:679	class:shader_core_ctx	signature:( register_set& pipe_reg_set, const warp_inst_t* next_inst, const active_mask_t &active_mask, unsigned warp_id )
+issue	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_ctx::issue(){$/;"	function	line:703	class:shader_core_ctx	signature:()
+warp	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^shd_warp_t& scheduler_unit::warp(int i){$/;"	function	line:710	class:scheduler_unit	signature:(int i)
+order_lrr	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void scheduler_unit::order_lrr( std::vector< T >& result_list,$/;"	function	line:735	class:scheduler_unit	signature:( std::vector< T >& result_list, const typename std::vector< T >& input_list, const typename std::vector< T >::const_iterator& last_issued_from_input, unsigned num_warps_to_add )
+order_by_priority	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void scheduler_unit::order_by_priority( std::vector< T >& result_list,$/;"	function	line:768	class:scheduler_unit	signature:( std::vector< T >& result_list, const typename std::vector< T >& input_list, const typename std::vector< T >::const_iterator& last_issued_from_input, unsigned num_warps_to_add, OrderingType ordering, bool (*priority_func)(T lhs, T rhs) )
+cycle	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void scheduler_unit::cycle()$/;"	function	line:802	class:scheduler_unit	signature:()
+do_on_warp_issued	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void scheduler_unit::do_on_warp_issued( unsigned warp_id,$/;"	function	line:932	class:scheduler_unit	signature:( unsigned warp_id, unsigned num_issued, const std::vector< shd_warp_t* >::const_iterator& prioritized_iter )
+sort_warps_by_oldest_dynamic_id	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^bool scheduler_unit::sort_warps_by_oldest_dynamic_id(shd_warp_t* lhs, shd_warp_t* rhs)$/;"	function	line:943	class:scheduler_unit	signature:(shd_warp_t* lhs, shd_warp_t* rhs)
+order_warps	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void lrr_scheduler::order_warps()$/;"	function	line:958	class:lrr_scheduler	signature:()
+order_warps	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void gto_scheduler::order_warps()$/;"	function	line:966	class:gto_scheduler	signature:()
+do_on_warp_issued	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^two_level_active_scheduler::do_on_warp_issued( unsigned warp_id,$/;"	function	line:977	class:two_level_active_scheduler	signature:( unsigned warp_id, unsigned num_issued, const std::vector< shd_warp_t* >::const_iterator& prioritized_iter )
+order_warps	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void two_level_active_scheduler::order_warps()$/;"	function	line:997	class:two_level_active_scheduler	signature:()
+swl_scheduler	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^swl_scheduler::swl_scheduler ( shader_core_stats* stats, shader_core_ctx* shader,$/;"	function	line:1044	class:swl_scheduler	signature:( shader_core_stats* stats, shader_core_ctx* shader, Scoreboard* scoreboard, simt_stack** simt, std::vector<shd_warp_t>* warp, register_set* sp_out, register_set* sfu_out, register_set* mem_out, int id, char* config_string )
+order_warps	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void swl_scheduler::order_warps()$/;"	function	line:1067	class:swl_scheduler	signature:()
+read_operands	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_ctx::read_operands()$/;"	function	line:1082	class:shader_core_ctx	signature:()
+coalesced_segment	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^address_type coalesced_segment(address_type addr, unsigned segment_size_lg2bytes)$/;"	function	line:1086	signature:(address_type addr, unsigned segment_size_lg2bytes)
+translate_local_memaddr	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^unsigned shader_core_ctx::translate_local_memaddr( address_type localaddr, unsigned tid, unsigned num_shader, unsigned datasize, new_addr_type* translated_addrs )$/;"	function	line:1092	class:shader_core_ctx	signature:( address_type localaddr, unsigned tid, unsigned num_shader, unsigned datasize, new_addr_type* translated_addrs )
+test_res_bus	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^int shader_core_ctx::test_res_bus(int latency){$/;"	function	line:1152	class:shader_core_ctx	signature:(int latency)
+execute	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_ctx::execute()$/;"	function	line:1159	class:shader_core_ctx	signature:()
+print_cache_stats	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void ldst_unit::print_cache_stats( FILE *fp, unsigned& dl1_accesses, unsigned& dl1_misses ) {$/;"	function	line:1188	class:ldst_unit	signature:( FILE *fp, unsigned& dl1_accesses, unsigned& dl1_misses )
+get_cache_stats	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void ldst_unit::get_cache_stats(cache_stats &cs) {$/;"	function	line:1194	class:ldst_unit	signature:(cache_stats &cs)
+get_L1D_sub_stats	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void ldst_unit::get_L1D_sub_stats(struct cache_sub_stats &css) const{$/;"	function	line:1205	class:ldst_unit	signature:(struct cache_sub_stats &css) const
+get_L1C_sub_stats	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void ldst_unit::get_L1C_sub_stats(struct cache_sub_stats &css) const{$/;"	function	line:1209	class:ldst_unit	signature:(struct cache_sub_stats &css) const
+get_L1T_sub_stats	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void ldst_unit::get_L1T_sub_stats(struct cache_sub_stats &css) const{$/;"	function	line:1213	class:ldst_unit	signature:(struct cache_sub_stats &css) const
+warp_inst_complete	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_ctx::warp_inst_complete(const warp_inst_t &inst)$/;"	function	line:1218	class:shader_core_ctx	signature:(const warp_inst_t &inst)
+writeback	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_ctx::writeback()$/;"	function	line:1241	class:shader_core_ctx	signature:()
+shared_cycle	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^bool ldst_unit::shared_cycle( warp_inst_t &inst, mem_stage_stall_type &rc_fail, mem_stage_access_type &fail_type)$/;"	function	line:1285	class:ldst_unit	signature:( warp_inst_t &inst, mem_stage_stall_type &rc_fail, mem_stage_access_type &fail_type)
+process_cache_access	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^ldst_unit::process_cache_access( cache_t* cache,$/;"	function	line:1304	class:ldst_unit	signature:( cache_t* cache, new_addr_type address, warp_inst_t &inst, std::list<cache_event>& events, mem_fetch *mf, enum cache_request_status status )
+process_memory_access_queue	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^mem_stage_stall_type ldst_unit::process_memory_access_queue( cache_t *cache, warp_inst_t &inst )$/;"	function	line:1341	class:ldst_unit	signature:( cache_t *cache, warp_inst_t &inst )
+constant_cycle	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^bool ldst_unit::constant_cycle( warp_inst_t &inst, mem_stage_stall_type &rc_fail, mem_stage_access_type &fail_type)$/;"	function	line:1357	class:ldst_unit	signature:( warp_inst_t &inst, mem_stage_stall_type &rc_fail, mem_stage_access_type &fail_type)
+texture_cycle	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^bool ldst_unit::texture_cycle( warp_inst_t &inst, mem_stage_stall_type &rc_fail, mem_stage_access_type &fail_type)$/;"	function	line:1374	class:ldst_unit	signature:( warp_inst_t &inst, mem_stage_stall_type &rc_fail, mem_stage_access_type &fail_type)
+memory_cycle	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^bool ldst_unit::memory_cycle( warp_inst_t &inst, mem_stage_stall_type &stall_reason, mem_stage_access_type &access_type )$/;"	function	line:1388	class:ldst_unit	signature:( warp_inst_t &inst, mem_stage_stall_type &stall_reason, mem_stage_access_type &access_type )
+response_buffer_full	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^bool ldst_unit::response_buffer_full() const$/;"	function	line:1446	class:ldst_unit	signature:() const
+fill	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void ldst_unit::fill( mem_fetch *mf )$/;"	function	line:1451	class:ldst_unit	signature:( mem_fetch *mf )
+flush	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void ldst_unit::flush(){$/;"	function	line:1457	class:ldst_unit	signature:()
+simd_function_unit	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^simd_function_unit::simd_function_unit( const shader_core_config *config )$/;"	function	line:1462	class:simd_function_unit	signature:( const shader_core_config *config )
+sfu	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^sfu:: sfu(  register_set* result_port, const shader_core_config *config,shader_core_ctx *core  )$/;"	function	line:1469	class:sfu	signature:( register_set* result_port, const shader_core_config *config,shader_core_ctx *core )
+issue	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void sfu::issue( register_set& source_reg )$/;"	function	line:1475	class:sfu	signature:( register_set& source_reg )
+active_lanes_in_pipeline	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void ldst_unit::active_lanes_in_pipeline(){$/;"	function	line:1485	class:ldst_unit	signature:()
+active_lanes_in_pipeline	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void sp_unit::active_lanes_in_pipeline(){$/;"	function	line:1490	class:sp_unit	signature:()
+active_lanes_in_pipeline	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void sfu::active_lanes_in_pipeline(){$/;"	function	line:1498	class:sfu	signature:()
+sp_unit	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^sp_unit::sp_unit( register_set* result_port, const shader_core_config *config,shader_core_ctx *core)$/;"	function	line:1506	class:sp_unit	signature:( register_set* result_port, const shader_core_config *config,shader_core_ctx *core)
+issue	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void sp_unit :: issue(register_set& source_reg)$/;"	function	line:1512	class:sp_unit	signature:(register_set& source_reg)
+pipelined_simd_unit	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^pipelined_simd_unit::pipelined_simd_unit( register_set* result_port, const shader_core_config *config, unsigned max_latency,shader_core_ctx *core )$/;"	function	line:1522	class:pipelined_simd_unit	signature:( register_set* result_port, const shader_core_config *config, unsigned max_latency,shader_core_ctx *core )
+cycle	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void pipelined_simd_unit::cycle()$/;"	function	line:1533	class:pipelined_simd_unit	signature:()
+issue	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void pipelined_simd_unit::issue( register_set& source_reg )$/;"	function	line:1550	class:pipelined_simd_unit	signature:( register_set& source_reg )
+init	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void ldst_unit::init( mem_fetch_interface *icnt,$/;"	function	line:1568	class:ldst_unit	signature:( mem_fetch_interface *icnt, shader_core_mem_fetch_allocator *mf_allocator, shader_core_ctx *core, opndcoll_rfu_t *operand_collector, Scoreboard *scoreboard, const shader_core_config *config, const memory_config *mem_config, shader_core_stats *stats, unsigned sid, unsigned tpc )
+STRSIZE	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^    #define STRSIZE /;"	macro	line:1588	file:
+ldst_unit	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^ldst_unit::ldst_unit( mem_fetch_interface *icnt,$/;"	function	line:1605	class:ldst_unit	signature:( mem_fetch_interface *icnt, shader_core_mem_fetch_allocator *mf_allocator, shader_core_ctx *core, opndcoll_rfu_t *operand_collector, Scoreboard *scoreboard, const shader_core_config *config, const memory_config *mem_config, shader_core_stats *stats, unsigned sid, unsigned tpc )
+ldst_unit	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^ldst_unit::ldst_unit( mem_fetch_interface *icnt,$/;"	function	line:1639	class:ldst_unit	signature:( mem_fetch_interface *icnt, shader_core_mem_fetch_allocator *mf_allocator, shader_core_ctx *core, opndcoll_rfu_t *operand_collector, Scoreboard *scoreboard, const shader_core_config *config, const memory_config *mem_config, shader_core_stats *stats, unsigned sid, unsigned tpc, l1_cache* new_l1d_cache )
+issue	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void ldst_unit:: issue( register_set &reg_set )$/;"	function	line:1664	class:ldst_unit	signature:( register_set &reg_set )
+writeback	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void ldst_unit::writeback()$/;"	function	line:1689	class:ldst_unit	signature:()
+clock_multiplier	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^unsigned ldst_unit::clock_multiplier() const$/;"	function	line:1781	class:ldst_unit	signature:() const
+cycle	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void ldst_unit::cycle()$/;"	function	line:1808	class:ldst_unit	signature:()
+register_cta_thread_exit	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_ctx::register_cta_thread_exit( unsigned cta_num )$/;"	function	line:1927	class:shader_core_ctx	signature:( unsigned cta_num )
+shader_print_runtime_stat	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void gpgpu_sim::shader_print_runtime_stat( FILE *fout )$/;"	function	line:1954	class:gpgpu_sim	signature:( FILE *fout )
+shader_print_scheduler_stat	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void gpgpu_sim::shader_print_scheduler_stat( FILE* fout, bool print_dynamic_info ) const$/;"	function	line:1978	class:gpgpu_sim	signature:( FILE* fout, bool print_dynamic_info ) const
+STR_SIZE	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^    #define STR_SIZE /;"	macro	line:1982	file:
+shader_print_cache_stats	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void gpgpu_sim::shader_print_cache_stats( FILE *fout ) const{$/;"	function	line:2017	class:gpgpu_sim	signature:( FILE *fout ) const
+shader_print_l1_miss_stat	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void gpgpu_sim::shader_print_l1_miss_stat( FILE *fout ) const$/;"	function	line:2101	class:gpgpu_sim	signature:( FILE *fout ) const
+print	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void warp_inst_t::print( FILE *fout ) const$/;"	function	line:2165	class:warp_inst_t	signature:( FILE *fout ) const
+incexecstat	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_ctx::incexecstat(warp_inst_t *&inst)$/;"	function	line:2179	class:shader_core_ctx	signature:(warp_inst_t *&inst)
+print_stage	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_ctx::print_stage(unsigned int stage, FILE *fout ) const$/;"	function	line:2229	class:shader_core_ctx	signature:(unsigned int stage, FILE *fout ) const
+display_simt_state	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_ctx::display_simt_state(FILE *fout, int mask ) const$/;"	function	line:2235	class:shader_core_ctx	signature:(FILE *fout, int mask ) const
+print	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void ldst_unit::print(FILE *fout) const$/;"	function	line:2262	class:ldst_unit	signature:(FILE *fout) const
+display_pipeline	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_ctx::display_pipeline(FILE *fout, int print_mem, int mask ) const$/;"	function	line:2309	class:shader_core_ctx	signature:(FILE *fout, int print_mem, int mask ) const
+max_cta	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^unsigned int shader_core_config::max_cta( const kernel_info_t &k ) const$/;"	function	line:2397	class:shader_core_config	signature:( const kernel_info_t &k ) const
+cycle	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_ctx::cycle()$/;"	function	line:2455	class:shader_core_ctx	signature:()
+cache_flush	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_ctx::cache_flush()$/;"	function	line:2468	class:shader_core_ctx	signature:()
+allocate_reads	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^std::list<opndcoll_rfu_t::op_t> opndcoll_rfu_t::arbiter_t::allocate_reads()$/;"	function	line:2474	class:opndcoll_rfu_t::arbiter_t	signature:()
+barrier_set_t	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^barrier_set_t::barrier_set_t(shader_core_ctx *shader,unsigned max_warps_per_core, unsigned max_cta_per_core, unsigned max_barriers_per_cta, unsigned warp_size)$/;"	function	line:2555	class:barrier_set_t	signature:(shader_core_ctx *shader,unsigned max_warps_per_core, unsigned max_cta_per_core, unsigned max_barriers_per_cta, unsigned warp_size)
+allocate_barrier	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void barrier_set_t::allocate_barrier( unsigned cta_id, warp_set_t warps )$/;"	function	line:2580	class:barrier_set_t	signature:( unsigned cta_id, warp_set_t warps )
+deallocate_barrier	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void barrier_set_t::deallocate_barrier( unsigned cta_id )$/;"	function	line:2597	class:barrier_set_t	signature:( unsigned cta_id )
+warp_reaches_barrier	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void barrier_set_t::warp_reaches_barrier(unsigned cta_id,unsigned warp_id,warp_inst_t* inst)$/;"	function	line:2619	class:barrier_set_t	signature:(unsigned cta_id,unsigned warp_id,warp_inst_t* inst)
+warp_exit	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void barrier_set_t::warp_exit( unsigned warp_id )$/;"	function	line:2667	class:barrier_set_t	signature:( unsigned warp_id )
+warp_waiting_at_barrier	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^bool barrier_set_t::warp_waiting_at_barrier( unsigned warp_id ) const$/;"	function	line:2692	class:barrier_set_t	signature:( unsigned warp_id ) const
+dump	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void barrier_set_t::dump()$/;"	function	line:2697	class:barrier_set_t	signature:()
+warp_exit	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_ctx::warp_exit( unsigned warp_id )$/;"	function	line:2720	class:shader_core_ctx	signature:( unsigned warp_id )
+check_if_non_released_reduction_barrier	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^bool shader_core_ctx::check_if_non_released_reduction_barrier(warp_inst_t &inst)$/;"	function	line:2740	class:shader_core_ctx	signature:(warp_inst_t &inst)
+warp_waiting_at_barrier	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^bool shader_core_ctx::warp_waiting_at_barrier( unsigned warp_id ) const$/;"	function	line:2752	class:shader_core_ctx	signature:( unsigned warp_id ) const
+warp_waiting_at_mem_barrier	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^bool shader_core_ctx::warp_waiting_at_mem_barrier( unsigned warp_id )$/;"	function	line:2757	class:shader_core_ctx	signature:( unsigned warp_id )
+set_max_cta	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_ctx::set_max_cta( const kernel_info_t &kernel )$/;"	function	line:2768	class:shader_core_ctx	signature:( const kernel_info_t &kernel )
+decrement_atomic_count	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_ctx::decrement_atomic_count( unsigned wid, unsigned n )$/;"	function	line:2778	class:shader_core_ctx	signature:( unsigned wid, unsigned n )
+broadcast_barrier_reduction	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_ctx::broadcast_barrier_reduction(unsigned cta_id,unsigned bar_id,warp_set_t warps)$/;"	function	line:2784	class:shader_core_ctx	signature:(unsigned cta_id,unsigned bar_id,warp_set_t warps)
+fetch_unit_response_buffer_full	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^bool shader_core_ctx::fetch_unit_response_buffer_full() const$/;"	function	line:2794	class:shader_core_ctx	signature:() const
+accept_fetch_response	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_ctx::accept_fetch_response( mem_fetch *mf )$/;"	function	line:2799	class:shader_core_ctx	signature:( mem_fetch *mf )
+ldst_unit_response_buffer_full	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^bool shader_core_ctx::ldst_unit_response_buffer_full() const$/;"	function	line:2805	class:shader_core_ctx	signature:() const
+accept_ldst_unit_response	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_ctx::accept_ldst_unit_response(mem_fetch * mf)$/;"	function	line:2810	class:shader_core_ctx	signature:(mem_fetch * mf)
+store_ack	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_ctx::store_ack( class mem_fetch *mf )$/;"	function	line:2815	class:shader_core_ctx	signature:( class mem_fetch *mf )
+print_cache_stats	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_ctx::print_cache_stats( FILE *fp, unsigned& dl1_accesses, unsigned& dl1_misses ) {$/;"	function	line:2822	class:shader_core_ctx	signature:( FILE *fp, unsigned& dl1_accesses, unsigned& dl1_misses )
+get_cache_stats	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_ctx::get_cache_stats(cache_stats &cs){$/;"	function	line:2826	class:shader_core_ctx	signature:(cache_stats &cs)
+get_L1I_sub_stats	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_ctx::get_L1I_sub_stats(struct cache_sub_stats &css) const{$/;"	function	line:2832	class:shader_core_ctx	signature:(struct cache_sub_stats &css) const
+get_L1D_sub_stats	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_ctx::get_L1D_sub_stats(struct cache_sub_stats &css) const{$/;"	function	line:2836	class:shader_core_ctx	signature:(struct cache_sub_stats &css) const
+get_L1C_sub_stats	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_ctx::get_L1C_sub_stats(struct cache_sub_stats &css) const{$/;"	function	line:2839	class:shader_core_ctx	signature:(struct cache_sub_stats &css) const
+get_L1T_sub_stats	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_ctx::get_L1T_sub_stats(struct cache_sub_stats &css) const{$/;"	function	line:2842	class:shader_core_ctx	signature:(struct cache_sub_stats &css) const
+get_icnt_power_stats	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_ctx::get_icnt_power_stats(long &n_simt_to_mem, long &n_mem_to_simt) const{$/;"	function	line:2846	class:shader_core_ctx	signature:(long &n_simt_to_mem, long &n_mem_to_simt) const
+functional_done	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^bool shd_warp_t::functional_done() const$/;"	function	line:2851	class:shd_warp_t	signature:() const
+hardware_done	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^bool shd_warp_t::hardware_done() const$/;"	function	line:2856	class:shd_warp_t	signature:() const
+waiting	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^bool shd_warp_t::waiting()$/;"	function	line:2861	class:shd_warp_t	signature:()
+print	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shd_warp_t::print( FILE *fout ) const$/;"	function	line:2883	class:shd_warp_t	signature:( FILE *fout ) const
+print_ibuffer	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shd_warp_t::print_ibuffer( FILE *fout ) const$/;"	function	line:2912	class:shd_warp_t	signature:( FILE *fout ) const
+add_cu_set	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void opndcoll_rfu_t::add_cu_set(unsigned set_id, unsigned num_cu, unsigned num_dispatch){$/;"	function	line:2925	class:opndcoll_rfu_t	signature:(unsigned set_id, unsigned num_cu, unsigned num_dispatch)
+add_port	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void opndcoll_rfu_t::add_port(port_vector_t & input, port_vector_t & output, uint_vector_t cu_sets)$/;"	function	line:2938	class:opndcoll_rfu_t	signature:(port_vector_t & input, port_vector_t & output, uint_vector_t cu_sets)
+init	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void opndcoll_rfu_t::init( unsigned num_banks, shader_core_ctx *shader )$/;"	function	line:2951	class:opndcoll_rfu_t	signature:( unsigned num_banks, shader_core_ctx *shader )
+register_bank	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^int register_bank(int regnum, int wid, unsigned num_banks, unsigned bank_warp_shift)$/;"	function	line:2969	signature:(int regnum, int wid, unsigned num_banks, unsigned bank_warp_shift)
+writeback	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^bool opndcoll_rfu_t::writeback( const warp_inst_t &inst )$/;"	function	line:2977	class:opndcoll_rfu_t	signature:( const warp_inst_t &inst )
+dispatch_ready_cu	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void opndcoll_rfu_t::dispatch_ready_cu()$/;"	function	line:3011	class:opndcoll_rfu_t	signature:()
+allocate_cu	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void opndcoll_rfu_t::allocate_cu( unsigned port_num )$/;"	function	line:3038	class:opndcoll_rfu_t	signature:( unsigned port_num )
+allocate_reads	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void opndcoll_rfu_t::allocate_reads()$/;"	function	line:3062	class:opndcoll_rfu_t	signature:()
+ready	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^bool opndcoll_rfu_t::collector_unit_t::ready() const$/;"	function	line:3098	class:opndcoll_rfu_t::collector_unit_t	signature:() const
+dump	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void opndcoll_rfu_t::collector_unit_t::dump(FILE *fp, const shader_core_ctx *shader ) const$/;"	function	line:3103	class:opndcoll_rfu_t::collector_unit_t	signature:(FILE *fp, const shader_core_ctx *shader ) const
+init	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void opndcoll_rfu_t::collector_unit_t::init( unsigned n,$/;"	function	line:3118	class:opndcoll_rfu_t::collector_unit_t	signature:( unsigned n, unsigned num_banks, unsigned log2_warp_size, const core_config *config, opndcoll_rfu_t *rfu )
+allocate	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^bool opndcoll_rfu_t::collector_unit_t::allocate( register_set* pipeline_reg_set, register_set* output_reg_set )$/;"	function	line:3132	class:opndcoll_rfu_t::collector_unit_t	signature:( register_set* pipeline_reg_set, register_set* output_reg_set )
+dispatch	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void opndcoll_rfu_t::collector_unit_t::dispatch()$/;"	function	line:3156	class:opndcoll_rfu_t::collector_unit_t	signature:()
+simt_core_cluster	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^simt_core_cluster::simt_core_cluster( class gpgpu_sim *gpu,$/;"	function	line:3167	class:simt_core_cluster	signature:( class gpgpu_sim *gpu, unsigned cluster_id, const struct shader_core_config *config, const struct memory_config *mem_config, shader_core_stats *stats, class memory_stats_t *mstats )
+core_cycle	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void simt_core_cluster::core_cycle()$/;"	function	line:3188	class:simt_core_cluster	signature:()
+reinit	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void simt_core_cluster::reinit()$/;"	function	line:3199	class:simt_core_cluster	signature:()
+max_cta	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^unsigned simt_core_cluster::max_cta( const kernel_info_t &kernel )$/;"	function	line:3205	class:simt_core_cluster	signature:( const kernel_info_t &kernel )
+get_not_completed	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^unsigned simt_core_cluster::get_not_completed() const$/;"	function	line:3210	class:simt_core_cluster	signature:() const
+print_not_completed	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void simt_core_cluster::print_not_completed( FILE *fp ) const$/;"	function	line:3218	class:simt_core_cluster	signature:( FILE *fp ) const
+get_n_active_cta	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^unsigned simt_core_cluster::get_n_active_cta() const$/;"	function	line:3227	class:simt_core_cluster	signature:() const
+get_n_active_sms	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^unsigned simt_core_cluster::get_n_active_sms() const$/;"	function	line:3235	class:simt_core_cluster	signature:() const
+issue_block2core	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^unsigned simt_core_cluster::issue_block2core()$/;"	function	line:3243	class:simt_core_cluster	signature:()
+cache_flush	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void simt_core_cluster::cache_flush()$/;"	function	line:3266	class:simt_core_cluster	signature:()
+icnt_injection_buffer_full	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^bool simt_core_cluster::icnt_injection_buffer_full(unsigned size, bool write)$/;"	function	line:3272	class:simt_core_cluster	signature:(unsigned size, bool write)
+icnt_inject_request_packet	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void simt_core_cluster::icnt_inject_request_packet(class mem_fetch *mf)$/;"	function	line:3280	class:simt_core_cluster	signature:(class mem_fetch *mf)
+icnt_cycle	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void simt_core_cluster::icnt_cycle()$/;"	function	line:3316	class:simt_core_cluster	signature:()
+get_pdom_stack_top_info	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void simt_core_cluster::get_pdom_stack_top_info( unsigned sid, unsigned tid, unsigned *pc, unsigned *rpc ) const$/;"	function	line:3355	class:simt_core_cluster	signature:( unsigned sid, unsigned tid, unsigned *pc, unsigned *rpc ) const
+display_pipeline	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void simt_core_cluster::display_pipeline( unsigned sid, FILE *fout, int print_mem, int mask )$/;"	function	line:3361	class:simt_core_cluster	signature:( unsigned sid, FILE *fout, int print_mem, int mask )
+print_cache_stats	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void simt_core_cluster::print_cache_stats( FILE *fp, unsigned& dl1_accesses, unsigned& dl1_misses ) const {$/;"	function	line:3374	class:simt_core_cluster	signature:( FILE *fp, unsigned& dl1_accesses, unsigned& dl1_misses ) const
+get_icnt_stats	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void simt_core_cluster::get_icnt_stats(long &n_simt_to_mem, long &n_mem_to_simt) const {$/;"	function	line:3380	class:simt_core_cluster	signature:(long &n_simt_to_mem, long &n_mem_to_simt) const
+get_cache_stats	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void simt_core_cluster::get_cache_stats(cache_stats &cs) const{$/;"	function	line:3390	class:simt_core_cluster	signature:(cache_stats &cs) const
+get_L1I_sub_stats	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void simt_core_cluster::get_L1I_sub_stats(struct cache_sub_stats &css) const{$/;"	function	line:3396	class:simt_core_cluster	signature:(struct cache_sub_stats &css) const
+get_L1D_sub_stats	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void simt_core_cluster::get_L1D_sub_stats(struct cache_sub_stats &css) const{$/;"	function	line:3407	class:simt_core_cluster	signature:(struct cache_sub_stats &css) const
+get_L1C_sub_stats	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void simt_core_cluster::get_L1C_sub_stats(struct cache_sub_stats &css) const{$/;"	function	line:3418	class:simt_core_cluster	signature:(struct cache_sub_stats &css) const
+get_L1T_sub_stats	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void simt_core_cluster::get_L1T_sub_stats(struct cache_sub_stats &css) const{$/;"	function	line:3429	class:simt_core_cluster	signature:(struct cache_sub_stats &css) const
+checkExecutionStatusAndUpdate	/home/ryan/gpu/src/gpgpu-sim/shader.cc	/^void shader_core_ctx::checkExecutionStatusAndUpdate(warp_inst_t &inst, unsigned t, unsigned tid)$/;"	function	line:3441	class:shader_core_ctx	signature:(warp_inst_t &inst, unsigned t, unsigned tid)
