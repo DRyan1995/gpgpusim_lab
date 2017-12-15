@@ -866,7 +866,7 @@ void scheduler_unit::cycle()
                                 printf("current gap: %u\n", gap);
                                 m_stats->total_issued_mem_ops ++;
                                 m_stats->last_issued_mem_op = gpu_sim_cycle;
-                                const unsigned step = 10;
+                                const unsigned step = 5;
                                 index = gap / step;
                                 if(index > 9) index = 9;
                                 m_stats->histogram[index]++;
